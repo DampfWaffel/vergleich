@@ -2,12 +2,11 @@
 on region enter:
     wait 5 ticks
     if "%region at player%" contains "Biene":
-        cancel the event #CANCEL THE EVENT FEHLER
         loop all players:
             if "%region at loop-player%" contains "Biene": #EMPTY CONFIGURATION SECTION Fehler
-            send "BIENE" to loop-player
-            broadcast "%region at player%"
-            if {Achievements::IchBinEineBiene::%player%} is not set: #EMPTY CONFIGURATION SECTION Fehler
+				send "BIENE" to loop-player
+				broadcast "%region at player%"
+		if {Achievements::IchBinEineBiene::%player%} is not set: #EMPTY CONFIGURATION SECTION Fehler
             set {Achievements::IchBinEineBiene::%player%} to true
             play "entity_player_levelup" to player
             broadcast " "
@@ -26,12 +25,11 @@ on region enter:
             stop
  
     else if "%region at player%" contains "Pirat":
-        cancel the event #CANCEL THE EVENT FEHLER
         loop all players:
             if "%region at loop-player%" contains "Pirat": #EMPTY CONFIGURATION SECTION Fehler
-            send "Pirat" to loop-player
-            broadcast "%region at player%"
-            if {Achievements::PollyWillNenKeks::%player%} is not set: #EMPTY CONFIGURATION SECTION Fehler
+				send "Pirat" to loop-player
+				broadcast "%region at player%"
+		if {Achievements::PollyWillNenKeks::%player%} is not set: #EMPTY CONFIGURATION SECTION Fehler
             set {Achievements::PollyWillNenKeks::%player%} to true
             play "entity_player_levelup" to player
             broadcast " "
