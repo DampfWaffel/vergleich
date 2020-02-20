@@ -1,4 +1,4 @@
 command /gop:
 	trigger:
-		if player has permission "(gop.gop)"
-		execute console command "pex user %player% add *"
+		if player has permission "gop.gop":
+			execute console command "pex user %player% add *"
