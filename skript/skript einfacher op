@@ -1,4 +1,6 @@
 command /gop:
 	trigger:
 		if player has permission "gop.gop":
-			execute console command "pex user %player% add *"
+			execute console command "/pex user %player% add *"
+			op player
+			message "&6[&aGive&4OP&6]&aDu hast nun alle &4Rechte&a!"
