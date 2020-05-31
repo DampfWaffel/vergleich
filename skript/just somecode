@@ -1,0 +1,18 @@
+options:
+  Player1: "leo1lion1"
+
+command /A:
+    trigger:
+        loop all players:
+            set {playerlist::%loop-player%::coordinates} to loop-player's location
+  
+command /B:
+    trigger:
+        set {_temp} to {playerlist::%@Player1%::coordinates}
+        broadcast "%{_temp}%"
+        
+command /C:
+    trigger:
+        loop all players:
+            set {_temp} to {playerlist::%loop-player%::coordinates}
+            broadcast "%{_temp}%"
