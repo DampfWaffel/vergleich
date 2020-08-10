@@ -1,0 +1,16 @@
+on death of player:
+    if player is in world "LuckyBlocks":
+        wait 1 ticks
+        force victim to respawn
+    else if player is in world "HideAndSeek1", "HideAndSeek2" or "HideAndSeek3":
+        clear drops
+        wait 1 ticks
+        force victim to respawn
+        wait 1 ticks
+        set player's gamemode to spectator
+        remove 1 from {counter}
+        add player to {Spec::*}
+        send "{@Prefix} &a%player% &7ist &cgestorben" to all players in world event-world
+        add 50 to {geld.%attacker%} 
+        send "{@Prefix} Du hast 50 Tokens für den Kill bekommen." to attack
+
