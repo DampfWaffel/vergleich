@@ -1,15 +1,14 @@
-on death:
+on death of player:
+    set death message to ""
     wait 3 tick
     force respawn player
-
-on death:
     if player's world is not "Survival":
+        broadcast "&8» &c✞ &8| &7%player%!",
         set player's game mode to spectator
-    
-on death of player:
-    if player's world is "Survival":
-        wait 9 tick
-        make console execute command "/warp Survival %player%"
+    else if player's world is "Survival":
+        broadcast "&8» &7%player% starb im &bSurvival"
+        teleport player to {Warp::Survival}
+        
 
 on join:
     if player's prefix is "&c✞ &8┃ &7":
@@ -17,11 +16,15 @@ on join:
         wait 1 tick
         set player's game mode to adventure
         
-    
-on death of player:
-    if player's world is not "Survival":
-        broadcast "&8» &c✞ &8| &7%player%!"
-
-on death of player:        
-    if player's world is "Survival":
-        broadcast "&8» &7%player% starb im &bSurvival"
+        
+command /warp [<text>] [<text>]:
+    trigger:
+        if arg-1 is "set"
+            arg-2 is set:
+            set {Warp::%arg-2%} to location of player
+            message "&aWarp &7> &aPunkte &7%arg-2% &agesetzt"
+            stop
+        else if {Warp::%arg-1%} is set:
+            teleport player to {Warp::%arg-1%} 
+            stop
+        message "&aWarp &7> &c/warp [<text>] [<text>]" to sender
