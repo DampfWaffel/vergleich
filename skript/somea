@@ -1,0 +1,27 @@
+on death:
+    wait 3 tick
+    force respawn player
+
+on death:
+    if player's world is not "Survival":
+        set player's game mode to spectator
+    
+on death of player:
+    if player's world is "Survival":
+        wait 9 tick
+        make console execute command "/warp Survival %player%"
+
+on join:
+    if player's prefix is "&c✞ &8┃ &7":
+        make console execute command "lp user %player% demote revive"
+        wait 1 tick
+        set player's game mode to adventure
+        
+    
+on death of player:
+    if player's world is not "Survival":
+        broadcast "&8» &c✞ &8| &7%player%!"
+
+on death of player:        
+    if player's world is "Survival":
+        broadcast "&8» &7%player% starb im &bSurvival"
