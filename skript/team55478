@@ -3,8 +3,6 @@ command /testb:
         loop all players:
             if loop-player's group is "leben":
                 add 1 to {_num::leben}
-                loop all players:
-                    if loop-player-2's group is "tot":
-                        add 1 to {_num::tot}
-                        loop all players:
-                            set action bar of loop-player-3 to "Spieler am leben: &a&l%{_num::leben}% &fSpieler tot: &c&l%{_num::tot}%"
+            else if loop-player's group is "tot":
+                add 1 to {_num::tot}
+            set action bar of loop-player to "Spieler am leben: &a&l%{_num::leben}% &fSpieler tot: &c&l%{_num::tot}%"
