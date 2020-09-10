@@ -1,7 +1,7 @@
 command /testb:
-    trigger:
-        loop all players:
-            if loop-player's group is "arthursagt" or "tot":
-                add player to {_%loop-player's group%::*}
-                loop {_leben::*} and {_tot::*}:
-                set action bar of loop-player to "Spieler am leben: &a&l%size of {_leben::*}% &fSpieler tot: &c&l%size of {_tot::*}%"
+	trigger:
+		loop all players:
+			if loop-player's group is "leben" or "tot":
+				add player to {_%loop-player's group%::*}
+		loop {_leben::*} and {_tot::*}:
+			set action bar of loop-player to "Spieler am leben: &a&l%size of {_leben::*}% &fSpieler tot: &c&l%size of {_tot::*}%"
