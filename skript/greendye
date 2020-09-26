@@ -1,0 +1,18 @@
+on rightclick:
+    if player is not in world "{@world1}":
+        stop
+    else:
+        If player's tool is a light green dye named "&a&lKit-Explosion":
+            if {explo.%player%} is not set:
+                set {explo.%player%} to true
+                create a safe explosion of force 2 at player
+                damage all players in radius 10 of player by 3
+                set slot 8 of player to gray dye named "&a&lKit-Explosion"
+                Wait 30 seconds 
+                if {explo.%player%} is true:
+                    clear {explo.%player%}
+                    set slot 8 of player to light green dye named "&a&lKit-Explosion"
+                else:
+                    stop
+            else:
+                stop
