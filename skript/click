@@ -1,13 +1,175 @@
+options:
+	Prefix: &9&lZee &8»
+	noperm: &7Du hast keine Rechte für diesen Befehle!
+	abgeholt: &7Du hast Erfolgreich deine &9&lBelohnung &7abgeholt!
+	
+command /Belohnungen:
+	trigger:
+		open chest inventory with 4 rows named "{@Prefix} &9&lBelohnung" to player
+		set slot (integers from 0 to 35) of player's current inventory to light gray stained glass pane named "&8"		
+		set slot 10 of player's current inventory to glow book named "&8» &9&lTäglich Belohnung" with lore "" and "&8» &7Linksclick zum Öffnen" and ""
+		set slot 11 of player's current inventory to glow book named "&8» &9&lWöchentliche Belohnung" with lore "" and "&8» &7Linksclick zum Öffnen" and ""
+		set slot 12 of player's current inventory to glow book named "&8» &9&lMonatliche Belohnung" with lore "" and "&8» &7Linksklick zum Öffnen" and ""
+		set slot 14 of player's current inventory to glow book named "&8» &9&lTäglich Belohnung" with lore "" and "&8» &7Linksklick zum Öffnen" and ""
+		set slot 15 of player's current inventory to glow book named "&8» &9&lWöchentliche Belohnung" with lore "" and "&8» &7Linksklick zum Öffnen" and ""
+		set slot 16 of player's current inventory to glow book named "&8» &9&lMonatliche Belohnung" with lore "" and "&8» &7Linksklick zum Öffnen" and ""
+		set slot 19 of player's current inventory to glow green stained clay named "&8» &a&lNormal &9&lRewards"
+		set slot 20 of player's current inventory to glow green stained clay named "&8» &a&lNormal &9&lRewards"
+		set slot 21 of player's current inventory to glow green stained clay named "&8» &a&lNormal &9&lRewards"
+		set slot 23 of player's current inventory to glow yellow stained clay named "&8» &6&lPremium &9&lRewards" with lore "" and "&8» &7Diese &9&lBelohnung &7kannst du" and "&8» &7nur mit dem &9&lRang&7:" and "&8» &2&lA&a&lt&2&lh&a&le&2&lm &7(&2&l✯&7) &7Abholen!" and ""
+		set slot 24 of player's current inventory to glow yellow stained clay named "&8» &6&lPremium &9&lRewards" with lore "" and "&8» &7Diese &9&lBelohnung &7kannst du" and "&8» &7nur mit dem &9&lRang&7:" and "&8» &2&lA&a&lt&2&lh&a&le&2&lm &7(&2&l✯&7) &7Abholen!" and ""
+		set slot 25 of player's current inventory to glow yellow stained clay named "&8» &6&lPremium &9&lRewards" with lore "" and "&8» &7Diese &9&lBelohnung &7kannst du" and "&8» &7nur mit dem &9&lRang&7:" and "&8» &2&lA&a&lt&2&lh&a&le&2&lm &7(&2&l✯&7) &7Abholen!" and ""
+		
 on inventory click:
-	  if name of event-inventory is "{@Prefix} &9&lBelohnung":
-	  	cancel event
-	  	if event-click type is left mouse button:
+	if name of event-inventory is "{@Prefix} &9&lBelohnung":
+		cancel event
+		if event-click type is left mouse button:
 			if index of event-slot is 10:
-				execute player command "/pmb"
+				execute player command "/tbcheck"
+				
+
+			
+on inventory click:
+	if name of event-inventory is "{@Prefix} &9&lBelohnung":
+		cancel event
+		if event-click type is left mouse button:
 			if index of event-slot is 11:
-					execute player command "/pmb"
+				execute player command "/wbcheck"
+
+on inventory click:
+	if name of event-inventory is "{@Prefix} &9&lBelohnung":
+		cancel event
+		if event-click type is left mouse button:
 			if index of event-slot is 12:
-					execute player command "/pmb"				
-			if index of event-slot is 14,15,16:
+				execute player command "/mbcheck"
+
+on inventory click:
+	if name of event-inventory is "{@Prefix} &9&lBelohnung":
+		cancel event
+		if event-click type is left mouse button:
+			if index of event-slot is 14:
+				execute player command "/ptbcheck"
+
+on inventory click:
+	if name of event-inventory is "{@Prefix} &9&lBelohnung":
+		cancel event
+		if event-click type is left mouse button:
+			if index of event-slot is 15:
+				execute player command "/pwbcheck"
+
+on inventory click:
+	if name of event-inventory is "{@Prefix} &9&lBelohnung":
+		cancel event
+		if event-click type is left mouse button:
+			if index of event-slot is 16:
+				execute player command "/pmbcheck"
+
+
+command /tbcheck:
+	trigger:
+		open chest inventory with 3 rows named "{@Prefix} &9&lTB" to player
+		set slot (integers from 0 to 26) of player's current inventory to light gray stained glass pane named "&8"
+		set slot 10,11,12 of player's current inventory to glow lime dye named "&aAnnehmen" with lore "" and "&8» &7Linksclick zum Öffnen" and ""
+		set slot 14,15,16 of player's current inventory to glow red dye named "&cAblehnen" with lore "" and "&8» &7Linksclick zum Schließen" and ""
+		
+		
+on inventory click:
+	if name of player's current inventory is "{@Prefix} &9&lTB":
+		if event-slot is lime dye named "&aAnnehmen":
+			if index of event-slot is 10,11 or 12:
+				execute player command "/tb"
+				cancel event
+		else if event-slot is red dye named "&cAblehnen":
+			if index of event-slot is 14,15 or 16:
 				if event-click type is left mouse button:
-					close player's inventory
+				close player's inventory
+					
+
+command /wbcheck:
+	trigger:
+		open chest inventory with 3 rows named "{@Prefix} &9&lWB" to player
+		set slot (integers from 0 to 26) of player's current inventory to light gray stained glass pane named "&8"
+		set slot 10,11,12 of player's current inventory to glow lime dye named "&aAnnehmen" with lore "" and "&8» &7Linksclick zum Öffnen" and ""
+		set slot 14,15,16 of player's current inventory to glow red dye named "&cAblehnen" with lore "" and "&8» &7Linksclick zum Schließen" and ""
+
+on inventory click:
+	if event-slot is lime dye named "&aAnnehmen":
+		if index of event-slot is 10,11 or 12:
+			execute player command "/wbb"
+			cancel event
+	else if event-slot is red dye named "&cAblehnen":
+		if index of event-slot is 14,15 or 16:
+			if event-click type is left mouse button:
+			close player's inventory
+command /mbcheck:
+	trigger:
+		open chest inventory with 3 rows named "{@Prefix} &9&lMB" to player
+		set slot (integers from 0 to 26) of player's current inventory to light gray stained glass pane named "&8"
+		set slot 10,11,12 of player's current inventory to glow lime dye named "&aAnnehmen" with lore "" and "&8» &7Linksclick zum Öffnen" and ""
+		set slot 14,15,16 of player's current inventory to glow red dye named "&cAblehnen" with lore "" and "&8» &7Linksclick zum Schließen" and ""
+
+on inventory click:
+	if event-slot is lime dye named "&aAnnehmen":
+		if index of event-slot is 10,11 or 12:
+			execute player command "/mb"
+			cancel event
+	else if event-slot is red dye named "&cAblehnen":
+		if index of event-slot is 14,15 or 16:
+			if event-click type is left mouse button:
+			close player's inventory		
+
+
+command /ptbcheck:
+	trigger:
+		open chest inventory with 3 rows named "{@Prefix} &9&lPTB" to player
+		set slot (integers from 0 to 26) of player's current inventory to light gray stained glass pane named "&8"
+		set slot 10,11,12 of player's current inventory to glow lime dye named "&aAnnehmen" with lore "" and "&8» &7Linksclick zum Öffnen" and ""
+		set slot 14,15,16 of player's current inventory to glow red dye named "&cAblehnen" with lore "" and "&8» &7Linksclick zum Schließen" and ""
+
+on inventory click:
+	if event-slot is lime dye named "&aAnnehmen": 
+		if index of event-slot is 10,11 or 12:
+			execute player command "/ptb"
+			cancel event
+	else if event-slot is red dye named "&cAblehnen":
+		if index of event-slot is 14,15 or 16:
+			if event-click type is left mouse button:
+			close player's inventory		
+
+command /pwbcheck:
+	trigger:
+		open chest inventory with 3 rows named "{@Prefix} &9&lPWB" to player
+		set slot (integers from 0 to 26) of player's current inventory to light gray stained glass pane named "&8"
+		set slot 10,11,12 of player's current inventory to glow lime dye named "&aAnnehmen" with lore "" and "&8» &7Linksclick zum Öffnen" and ""
+		set slot 14,15,16 of player's current inventory to glow red dye named "&cAblehnen" with lore "" and "&8» &7Linksclick zum Schließen" and ""
+
+on inventory click:
+	if event-slot is lime dye named "&aAnnehmen": 
+		if index of event-slot is 10,11 or 12:
+			execute player command "/pwb"
+			cancel event
+	else if event-slot is red dye named "&cAblehnen":
+		if index of event-slot is 14,15 or 16:
+			if event-click type is left mouse button:
+			close player's inventory	
+			
+command /pmbcheck:
+	trigger:
+		open chest inventory with 3 rows named "{@Prefix} &9&lPMB" to player
+		set slot (integers from 0 to 26) of player's current inventory to light gray stained glass pane named "&8"
+		set slot 10,11,12 of player's current inventory to glow lime dye named "&aAnnehmen" with lore "" and "&8» &7Linksclick zum Öffnen" and ""
+		set slot 14,15,16 of player's current inventory to glow red dye named "&cAblehnen" with lore "" and "&8» &7Linksclick zum Schließen" and ""
+		
+on inventory click:
+	if event-slot is lime dye named "&aAnnehmen": 
+		if index of event-slot is 10,11 or 12:
+			execute player command "/pmb"
+			cancel event
+	else if event-slot is red dye named "&cAblehnen":
+		if index of event-slot is 14,15 or 16:
+			if event-click type is left mouse button:
+			close player's inventory
+				
+command /tb:
+	trigger:
+		message "Hallo"
