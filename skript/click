@@ -1,0 +1,27 @@
+on inventory click:
+  if name of event-inventory is "{@Prefix} &9&lBelohnung":
+		cancel event
+		if index of event-slot is 10:
+			if event-click type is left mouse button:
+				execute player command "/pmb"
+				
+on inventory click:
+	if name of event-inventory is "{@Prefix} &9&lBelohnung":
+		cancel event
+		if index of event-slot is 11:
+			if event-click type is left mouse button:
+				execute player command "/pmb"
+
+on inventory click:
+	if name of event-inventory is "{@Prefix} &9&lBelohnung":
+		cancel event
+		if index of event-slot is 12:
+			if event-click type is left mouse button:
+				execute player command "/pmb"				
+
+on inventory click:
+	if name of event-inventory is "{@Prefix} &9&lBelohnung":
+		cancel event
+		if index of event-slot is 14,15,16:
+			if event-click type is left mouse button:
+				close player's inventory
