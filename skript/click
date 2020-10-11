@@ -26,41 +26,14 @@ on inventory click:
 		if event-click type is left mouse button:
 			if index of event-slot is 10:
 				execute player command "/tbcheck"
-				
-
-			
-on inventory click:
-	if name of event-inventory is "{@Prefix} &9&lBelohnung":
-		cancel event
-		if event-click type is left mouse button:
 			if index of event-slot is 11:
 				execute player command "/wbcheck"
-
-on inventory click:
-	if name of event-inventory is "{@Prefix} &9&lBelohnung":
-		cancel event
-		if event-click type is left mouse button:
 			if index of event-slot is 12:
 				execute player command "/mbcheck"
-
-on inventory click:
-	if name of event-inventory is "{@Prefix} &9&lBelohnung":
-		cancel event
-		if event-click type is left mouse button:
 			if index of event-slot is 14:
 				execute player command "/ptbcheck"
-
-on inventory click:
-	if name of event-inventory is "{@Prefix} &9&lBelohnung":
-		cancel event
-		if event-click type is left mouse button:
 			if index of event-slot is 15:
 				execute player command "/pwbcheck"
-
-on inventory click:
-	if name of event-inventory is "{@Prefix} &9&lBelohnung":
-		cancel event
-		if event-click type is left mouse button:
 			if index of event-slot is 16:
 				execute player command "/pmbcheck"
 
