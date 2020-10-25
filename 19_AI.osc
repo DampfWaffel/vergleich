@@ -1,0 +1,178 @@
+'##############
+'AI-Script
+'##############
+
+'Controls some bus functions while bus is driven by AI
+
+'(c) 15.08.2009 Marcel Kuhnt
+' edited for Hamburg (Darius Bode) 2014
+'--------------------------------------------------------------------------------------
+
+
+
+{macro:AI_frame}
+
+
+(L.L.AI)
+{if}
+
+'Engine on:
+	(L.L.AI_Engine) 0.5 > (L.L.engine_on) 0.5 < &&
+		{if}
+			0 (S.L.bremse_feststell_sw) (S.L.bremse_feststell) (S.L.cockpit_gangN) (S.L.almex_pause)
+			1 (S.L.engine_ignition) (S.L.cp_schluessel_trans) (S.L.cp_schluessel_trans_mode) (S.L.cp_schluessel_rot) (S.L.cp_schluessel_rot_mode) (S.L.elec_busbar_main) (S.L.elec_busbar_main_sw) (S.L.almex_ein) (S.L.cockpit_gangD) (S.L.cp_wechsler_visible) (S.L.almex_fahrer_aktiviert) (S.L.almex_set_entriegelt) (S.L.c2klima_fahrgast) (S.L.c2klima_zusatz)
+			
+			5 (S.L.antrieb_getr_gangvorwahl) 
+			(L.S.getTime) (S.L.antrieb_getr_gangwahlzeitpunkt)
+			
+			4 (S.L.cockpit_gang_sw)
+			40 (S.L.antrieb_temperature)
+			1100000 (S.L.bremse_p_tank01) (S.L.bremse_p_tank02) (S.L.bremse_p_tank03) (S.L.bremse_p_tank04) (S.L.bremse_p_leitung01) (S.L.bremse_p_leitung02)
+		{endif}
+
+	(L.L.AI_Engine) 0.5 >
+		{if}
+			0 (S.L.bremse_feststell_sw) (S.L.bremse_feststell)
+		{endif}	
+
+
+'----------------------------------
+'Engine off:
+	(L.L.AI_Engine) -0.5 < (L.L.engine_on) 0.5 > &&
+	{if}
+		2 (S.L.engine_ignition)
+		1 (S.L.bremse_feststell_sw) (S.L.bremse_feststell) (S.L.antrieb_getr_gangvorwahl) (S.L.cockpit_gangN)
+		0 (S.L.cockpit_gangR) (S.L.cockpit_gangD) (S.L.cockpit_gang_sw)
+		(L.L.AI_Light) {if} 1 (S.L.lights_mode) {else} 0 (S.L.lights_mode) {endif} 
+	{endif}
+
+'----------------------------------
+'stop brake:
+	(L.L.Throttle) 0 = (L.L.Velocity) 0 = (L.L.AI_Scheduled_AtStation) 1 = || &&
+		{if}
+			1 (S.L.cp_stopbrake_targeton) (S.L.bremse_halte_sw)
+		{else}
+			0 (S.L.cp_stopbrake_targeton) (S.L.bremse_halte_sw)
+		{endif}
+	
+'----------------------------------
+'Doors:
+
+	(L.L.AI_Scheduled_AtStation) s0
+	1 =
+	{if}
+'Wenn Türen geöffnet werden sollen:
+		(L.L.Velocity) (C.L.doors_maxvspeed) <
+		{if}
+'Nur, wenn v < maxkmh, sonst warten
+'Taster jeweils nur betätigen, falls noch nicht an
+			
+			(L.L.doorTarget_0) ! (L.L.doorTarget_1) ! (L.L.door_AI_timer) 0.5 > || &&
+			{if}
+				(M.L.trg_bus_doorfront0)
+				(M.L.trg_bus_doorfront1)
+				1 (S.L.door_freigabe) (S.L.vdv_sw_tuerfreigabe)
+				(L.L.door_2_wunsch) (L.L.PAX_Exit0_Req) || (L.L.PAX_Exit1_Req) || {if} (M.L.AI_doorback) {endif}
+			{endif}			
+		{else}
+			0 (S.L.door_AI_timer) (S.L.door_freigabe) (S.L.vdv_sw_tuerfreigabe)
+		{endif}
+		(L.L.door_AI_timer) (L.S.Timegap) + (S.L.door_AI_timer)
+	{else}
+	l0 -1 =
+	{if}
+	
+	
+'Wenn Türen geschlossen werden sollen:
+'Taster jeweils nur betätigen, falls noch nicht aus:
+		(L.L.doorTarget_1) (L.L.doorTarget_0) ||
+		{if}
+			(M.L.trg_bus_doorfront0)
+			(M.L.trg_bus_doorfront1)
+			(L.L.door_2) 0.1 > {if} (M.L.AI_doorback) {endif}
+			0 (S.L.door_AI_timer) (S.L.door_freigabe) (S.L.vdv_sw_tuerfreigabe)
+		{endif}
+
+'Haltestellenbremse erst wegnehmen, wenn alle Türen zu. Dann auch erst den Bus AI-mäßig freigeben:
+		(L.L.door_0) 0.1 <
+		(L.L.door_1) 0.1 < &&
+		(L.L.door_2) 0.1 < &&
+		(L.L.door_3) 0.1 < &&
+		(L.L.door_4) 0.1 < &&
+		(L.L.door_5) 0.1 < &&
+		(L.L.door_6) 0.1 < &&
+		(L.L.door_7) 0.1 < &&
+		(L.L.door_8) 0.1 < &&
+		(L.L.door_9) 0.1 < &&
+		{if}
+			(L.L.door_AI_timer) 0.3 >
+			{if}			
+				0 (S.L.AI_Scheduled_AtStation)
+			{endif}
+		{else}
+			(L.L.doorTarget_0) !
+			(L.L.doorTarget_1) ! &&
+			{if}
+				0 (S.L.door_AI_timer) (S.L.door_freigabe) (S.L.vdv_sw_tuerfreigabe)
+			{endif}
+		{endif}
+		(L.L.door_AI_timer) (L.S.Timegap) + (S.L.door_AI_timer)
+	{endif}
+	{endif}
+	
+		
+'-----------------------------------
+'Beleuchtung:
+	(L.L.AI)
+	{if}
+		(L.L.AI_Blinker_L) (L.L.AI_Engine) 0.5 > &&
+		{if}
+			1 (S.L.lights_sw_blinker)
+		{else} (L.L.AI_Blinker_R) (L.L.AI_Engine) 0.5 > && {if}
+			2 (S.L.lights_sw_blinker)
+		{else}
+			0 (S.L.lights_sw_blinker)
+		{endif}
+		{endif}
+
+		(L.L.AI_Light) 
+		{if}
+			(L.L.AI_Engine) 0.5 >
+			{if}
+				2  (S.L.lights_mode)				
+				1 (S.L.cp_intlights_2) (S.L.cp_intlights_1)						
+			{else}				 
+				0 (S.L.cp_intlights_2) (S.L.cp_intlights_1) 
+				1 (S.L.lights_mode)
+			{endif}
+		{else}
+			0 (S.L.cp_intlights_2) (S.L.cp_intlights_1)  (S.L.lights_mode)
+		{endif}
+	{endif}
+
+'-----------------------------------
+'Scheibenwischer:
+'Nur wenn Motor an sein soll:
+	(L.L.AI) (L.L.AI_Engine) 1 = &&
+	{if}
+'Wenn der Intervallwischer nicht ausreicht, dann Dauermodus:
+		(C.L.wiper_intervall_langsam) (L.L.PrecipRate) * (C.L.rain_wiper_eff) >
+		{if}
+			0 (S.L.wiper_intervall_sw)
+			1 (S.L.wiper_einaus_sw)
+		{else}
+'Sonst (falls es regnet) den Intervallmodus:
+		(L.L.PrecipRate) 0 >
+		{if}
+			1 (S.L.wiper_intervall_sw)
+			0 (S.L.wiper_einaus_sw)
+		{else}
+			0 (S.L.wiper_intervall_sw)
+			0 (S.L.wiper_einaus_sw)
+		{endif}
+		{endif}
+	{endif}
+{else}
+ 0 (S.L.AI_kickdown)
+{endif}
+{end}
