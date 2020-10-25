@@ -150,6 +150,15 @@
 		{endif}
 	{endif}
 
+'fOcUs04 Edit
+
+	(L.L.Throttle) 0.05 >
+	{if}
+		0 (S.L.door_freigabe) (S.L.vdv_sw_tuerfreigabe) (S.L.kneeling)
+	{endif}
+
+'fOcUs04 Edit End
+
 '-----------------------------------
 'Scheibenwischer:
 'Nur wenn Motor an sein soll:
