@@ -1,5 +1,3 @@
-
-Save New Duplicate & Edit Just Text
 command /updatescoreboard:
     trigger:
         set {_inhaberpermission} to skript-yaml value "Rang Permissions.Permissions Inhaber" of "plugins/Lobby System/scoreboard.yml"
