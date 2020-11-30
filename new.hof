@@ -1,327 +1,1938 @@
-Diese Datei wurde mit der HOF Suite von Rumpelhans geschrieben.
-This file was written with HOF Suite by Rumpelhans.
+	########################
+		HOF-Datei
+	########################
 
-*****************************************
-* H O F   F i l e   p r o p e r t i e s *
-*****************************************
+	Enthält die diversen Informationen zum Einsatz für diesen Hof.
+	Auf diese Weise kann EIN Bus-Modell für verschiedene Einsätze
+	mit verschiedenen Zielen und Haltestellen verwendet werden.
+
+
+
+	Name des Hofes:
 
 [name]
-HafenCity Linienpack 2018
+Hamburg (HHA 2015)
 
 [servicetrip]
-www.hochbahn.de
+hochbahn.de
 
+	Ansagen-Ordner:
+	
 [global_strings]
-6
+1
 HamburgHafenCity
 
-HamburgHafenCity
 
-
-
+	Setzen der Anzahl der Strings:
 
 stringcount_terminus
-26
+5
 
+	Code
+	Name
+	string0:	Matrix Ziel kleine Schrift 
+	string1:	Matrix Ziel Grosstext (Besonderheit dieser Schrift: Leerzeichen für normalen Zeichenabstand tippen)	
+	string2:	Zielname fuer andere Busse mit Standard-IBIS (SD etc) 
+	string3:	ist Sonderziel (wenn hier etwas eingetragen ist, egal was, löscht das Matrix-Skript die Liniennr.)
+	string4:	Brechpunktkuerzel
+	
 stringcount_busstop
-9
+4
 
-*****************
-* T e r m i n i *
-*****************
 
-[addterminus_list]
-{ALLEX}	0	Empty
-	281	U Borgweg	U BORGWEG       	U BORGWEG       			BOW	U BORGWEG
-{ALLEX}	3	www.hochbahn.de	WWW.HOCHBAHN.DE	hochbahn.de		Sonderziel		WWW.HOCHBAHN.DE
-{ALLEX}	683	www.hochbahn.de	WWW.HOCHBAHN.DE	hochbahn.de		Sonderziel		WWW.HOCHBAHN.DE
-{ALLEX}	2	www.hochbahn.de	WWW.HOCHBAHN.DE	hochbahn.de		Sonderziel		WWW.HOCHBAHN.DE
-{ALLEX}	2000	Betriebshof Mesterkamp	WWW.HOCHBAHN.DE	hochbahn.de		Sonderziel		WWW.HOCHBAHN.DE
-{ALLEX}	505	Matrixtest		###	A	A	................	[addterminus_allexit]
-{ALLEX}	122	Überliegeplatz Adenauerallee (Pause vorn)	WWW.HOCHBAHN.DE	hochbahn.de		Sonderziel	UAA	WWW.HOCHBAHN.DE
-{ALLEX}	123	Überliegeplatz Adenauerallee (Pause Mitte)	WWW.HOCHBAHN.DE	hochbahn.de		Sonderziel	UAA	WWW.HOCHBAHN.DE
-	33	Hauptbahnhof Steintordamm	HAUPTBAHNHOF    	Hauptbahnhof			HBF	Hauptbahnhof
-	27	Hauptbahnhof ZOB	HAUPTBAHNHOF ZOB	HAUPTBAHNHOF ZOB			ZAL	HAUPTBAHNHOF ZOB
-	582	U Alsterdorf	U ALSTERDORF    	U ALSTERDORF    			UAL	U ALSTERDORF
-	423	Winterhude Markt	WINTERHUDE MARK 	WINTERHUDE MARK 			WIM	WINTERHUDE MARK
-	5	Rathausmarkt	RATHAUSMARKT    	RATHAUSMARKT    			RAM	RATHAUSMARKT
-	5555	Rathausmarkt	RATHAUSMARKT    	RATHAUSMARKT    			RAM	RATHAUSMARKT
-	14	Bf. Altona	BF. ALTONA      	BF. ALTONA      			ATH	BF. ALTONA
-	223	S Reeperbahn	S REEPERBAHN    	S REEPERBAHN    			SRB	S REEPERBAHN
-	668	Bardowick	BARDOWICK       	BARDOWICK       			BAR	BARDOWICK
-	555	Rathausmarkt	RATHAUSMARKT    	RATHAUSMARKT    			RAM	RATHAUSMARKT
-	583	U Alsterdorf (Ankunft)	U ALSTERDORF    	U ALSTERDORF    			UAL	U ALSTERDORF
-	584	U Alsterdorf (Ankunft vorn)	U ALSTERDORF    	U ALSTERDORF    			UAL	U ALSTERDORF
-	51	Rathausmarkt (Terminus 109)	RATHAUSMARKT    	RATHAUSMARKT    			RAM	RATHAUSMARKT
-	52	Rathausmarkt (Terminus M4)	RATHAUSMARKT    	RATHAUSMARKT    			RAM	RATHAUSMARKT
-	110	Zollvereinsstraße	ZOLLVEREINSSTR  	ZOLLVEREINSSTR  			ZVS	ZOLLVEREINSSTRASSE
-	150	Bf. Bergedorf	BF. BERGEDORF   	BF. BERGEDORF   			BBF	BF. BERGEDORF
-	0	Thomas-Mann-Straße	THOMAS-MANN-STR.	THOMAS-MANN-STR.			TMS	THOMAS-MANN-STRASSE
-	0	U S Barmbek	U-S-BARMBEK     	U-S-BARMBEK     			BAB	U-S-BARMBEK
-	569	Wildacker	WILDACKER       	WILDACKER       			WDA	WILDACKER
-	5690	Eidelstedt Wildacker	WILDACKER       	EIDELSTEDT      	WILDACKER       		WDA	EIDELSTEDT WILDACKER
-	425	Hauptbahnhof	HAUPTBAHNHOF ZOB	Hauptbahnhof ZOB			ZOB	Hauptbahnhof ZOB
-	538	A Burgwedel	A-BURGWEDEL     	A-BURGWEDEL     			BWL	A-BURGWEDEL
-	459	U-Rödingsmarkt	U-RÖDINGSMARK   	U-RÖDINGSMARK   			RDM	U-RÖDINGSMARK
-	593	U-Borgweg	U BORGWEG       	U BORGWEG       			BOW	U BORGWEG
-	594	U Borgweg	U BORGWEG       	U BORGWEG       	U Borgweg       		BOW	U BORGWEG
-	470	Rugenbarg	RUGENBARG       	RUGENBARG       			RUN	RUGENBARG
-	282	U-Messberg	U-MESSBERG      	U-MESSBERG      			MGB	U-MESSBERG
-	4593	U-Rödingsmarkt 3	U-RÖDINGSMARKT  	U-RÖDINGSMARKT  			RU3	U-RÖDINGSMARKT
-	2823	U-Messberg 3	U-MESSBERG      	U-MESSBERG      			MG3	U-MESSBERG
-	484	Schnellbus Schenefelder Pl.	SCHENEFELDER PL.	SCHNELLBUS      	SCHENEFELDER PL.		LOR	SCHENEFELDER PLATZ
-	179	Schnellbus Bramfelder Dorfpl.	BRAMFELDER DORFP	SCHNELLBUS      	BRAMFELDER DORFP		BFD	BRAMFELDER DORFPATZ
-	396	Schnellbus Rahlstedt	RAHLSTEDT       	SCHNELLBUS      	RAHLSTEDT       		SOK	RAHLSTEDT
-	1888	Schnellbus Messe	MESSE           	SCHNELLBUS      	MESSE           		HME	MESSE
-	225	Schnellbus Farmsen Berne	FARMSEN BERNE   	SCHNELLBUS      	FARMSEN BERNE   		BSE	FARMSEN BERNE
-	158	Schnellbus S Blankenese	S BLANKENESE    	SCHNELLBUS      	S BLANKENESE    		BBL	S BLANKENESE
-	37	Hamm Braune Brücke	BRAUNE BRÜCKE   	HAMM            	BRAUNE BRÜCKE   		BRB	HAMM BRAUNE BRÜCKE
-	38	Hamm Osterbrookplatz	OSTERBROOKPLATZ 	HAMM            	OSTERBROOKPLATZ 		OSB	OSTERBROOKPLATZ
-	39	U Fuhlsbüttel	U FUHLSBÜTTEL   	U FUHLSBÜTTEL   			UFB	U FUHLSBÜTTEL
-	46	Neumühlen Övelgönne	ÖVELGÖNNE       	NEUMÜHLEN       	ÖVELGÖNNE       		NEU	NEUMÜHLEN ÖVELGÖNNE
-	461	Bramfeld Am Stühm-Süd	AM STÜHM-SÜD    	BRAMFELD        	AM STÜHM-SÜD    		ASS	AM STÜHM-SÜD
-	462	Hummelsbüttel Lentersweg	LENTERSWEG      	HUMMELSBÜTTEL   	LENTERSWEG      		LEN	LENTERSWEG
-	463	Mundsburger Brücke	MUNDSBURGER BRÜC	MUNDSBURGER BRÜC			MBR	MUNDSBURGER BRÜCKE
-{ALLEX}	969	Wasch mich	WASCH MICH      	WASCH MICH      				................
-{ALLEX}	970	Leider keine Mitfahrt	KEINE MITFAHRT  	KEINE MITFAHRT  				................
-{ALLEX}	681	Fahrtende, bitte nicht einsteigen	FAHRTENDE       	FAHRTENDE       	NICHT EINSTEIGEN	Sonderziel		FAHRTENDE
-{ALLEX}	971	Ich bin ein Bus	ICH BIN EIN BUS 	ICH BIN EIN BUS 				ICH BIN EIN BUS
-	296	S Rissen	S RISSEN        	S RISSEN        			RIB	S RISSEN
-	292	Schenefelder Platz	SCHENEFELDER PL 	SCHENEFELDER PL 			LOR	SCHENEFELDER PLATZ
-	293	Schenefeld Achterndiek	ACHTERNDIEK     	SCHENEFELD      	ACHTERNDIEK     		SAD	ACHTERNDIEK
-	280	Bf. Altona	BF. ALTONA      	BF. ALTONA      			ATH	BF. ALTONA
-	644	Alsterchaussee	ALSTERCHAUSSEE  	ALSTERCHAUSSEE  			MAC	ALSTERCHAUSSEE
-	284	S Klein Flottbek	S KLEIN FLOTTBEK	S KLEIN FLOTTBEK			KFB	S KLEIN FLOTTBEK
-	10	Schnelsen Kalvslohtwiete	KALVSLOHTWIETE  	SCHNELSEN       	KALVSLOHTWIETE  		KTW	KALVSLOHTWIETE
-	565	Eidelstedter Platz	EIDELSTEDTER PL 	EIDELSTEDTER PL 			EDP	EIDELSTEDTER PLATZ
-	500	U Alsterdorf	U ALSTERDORF    	U ALSTERDORF    			UAL	U ALSTERDORF
-	300	Bf. Rahlstedt	BF. RAHLSTEDT   	BF. RAHLSTEDT   			RAL	BF. RAHLSTEDT
-	409	U Niendorf Markt	U NIENDORF MARKT	U NIENDORF MARKT			NIM	U NIENDORF MARKT
-	240	U Billstedt	U BILLSTEDT     	U BILLSTEDT     			BIL	U BILLSTEDT
-	295	S Poppenbüttel	S POPPENBÜTTEL  	S POPPENBÜTTEL  			PBS	S POPPENBÜTTEL
-	374	U Kellinghusenstraße	U KELLINGHUSENST	U KELLINGHUSENST			KEL	U KELLINGHUSENSTASSE
-	3744	U Kellinghusenstraße	U KELLINGHUSENST	U KELLINGHUSENST			KEL	U KELLINGHUSENSTASSE
-	164	U Wandsbek Gartenstadt	GARTENSTADT     	U WANDSBEK      	GARTENSTADT     		WKG	GARTENSTADT
-	352	U Burgstraße	U BURGSTRASSE   	U BURGSTRASSE   			BUR	U BURGSTRASSE
-	717	Gärtnerstraße	GÄRTNERSTRASSE  	GÄRTNERSTRASSE  			GAE	GÄRTNERSTRASSE
-	492	S Rübenkamp	S RÜBENKAMP     	S RÜBENKAMP     			RPS	S RÜBENKAMP
-	930	Horn Böcklerstraße	HORN BÖCKLERSTR 	HORN BÖCKLERSTR 			BOE	HORN BÖCKLERSTRASSE
-	639	S Wedel	S WEDEL         	S WEDEL         			WSF	S WEDEL
-	2455	S Nettelnburg	<S> NETTELNBURG 	S NETTELNBURG   			NSB	S NETTELNBURG
-	603	Schnelsen Grothwisch	GROTHWISCH      	SCHNELSEN       	GROTHWISCH      		GRT	GROTHWISCH
-	355	Osdorfer Born Immenbusch	OSDORFER BORN   	OSDORFER BORN   	IMMENBUSCH      		IMM	OSDORFER BORN
-	252	Neu Wulmstorf	NEU WULMSTORF   	NEU WULMSTORF   			NWU	NEU WULMSTORF
-	706	Rahlstedt Großlohe	GROßLOHE        	RAHLSTEDT       	GROßLOHE        		RGL	RAHLSTEDT GROßLOHE
-	707	Kirchenallee	KIRCHENALLEE    	KIRCHENALLEE    				KIRCHENALLEE
-{ALLEX}	589	FAHRSCHULE		FAHRSCHULE		Sonderziel
-{ALLEX}	684	SCHULBUS (klein)	SCHULBUS        	SCHULBUS        				SCHULBUS
-{ALLEX}	685	SCHULBUS (gross)	SCHULBUS        	SCHULBUS				SCHULBUS
-	396	Rahlstedt Ost Sorenkoppel	OST SORENKOPPEL 	RAHLSTEDT       	OST SORENKOPPEL 		SOK	OST SORENKOPPEL
-	647	Rahlstedt Eichberg	EICHBERG        	RAHLSTEDT       	EICHBERG        		EIS	RAHLSTEDT EICHBERG
-	648	U Farmsen	U FARMSEN       	U FARMSEN       			FAR	U FARMSEN
-	316	Meiendorf Ost Künnekestraße	KÜNNEKESTRAßE   	RAHLSTEDT       	OST KÜNNEKESTR  		KNS	OST KÜNNEKESTRAßE
-{ALLEX}	122	I LOVE HOV		I LOVE HOV		Sonderziel		................
-{ALLEX}	125	I LOVE HAFA ONE		I LOVE HAFA ONE		Sonderziel		................
-	232	Fischbeker Heideweg	HEIDEWEG        	FISCHBEKER      	HEIDEWEG        		FSH	FISCHBEKER HEIDEWEG
-	2335	Elbe-Einkaufszentrum	EINKAUFSZENTRUM 	ELBE            	EINKAUFSZENTRUM 		EZK	ELBE EINKAUFSZENTRUM
-	2336	Pflegezentrum Lutherpark	LUTHERPARK      	PFLEGEZENTRUM   	LUTHERPARK      		PHK	LUTHERPARK
-	2334	Fischmarkt	FISCHMARKT      	FISCHMARKT      			ARA	FISCHMARKT
-	233	Teufelsbrück Fähre	TEUFELSBRÜCK    	TEUFELSBRÜCK    	FÄHRE           		TFB	TEUFELSBRÜCK FÄHRE
-	236	Shanghaiallee	SHANGHAIALLEE   	HAFENCITY       	SHANGHAIALLEE   		SHA	SHANGHAIALLEE
-	238	Kraftwerk Tiefstack	KRAFTWERK       	KRAFTWERK       	TIEFSTACK       		TIF	KRAFTWERK TIEFSTACK
-	239	Auf dem Sande	AUF DEM SANDE   	SPEICHERSTADT   	AUF DEM SANDE   		ASA	AUF DEM SANDE
-	240	Altstadt Brandstwiete	BRANDSTWIETE    	ALTSTADT        	BRANDSTWIETE    		BRT	BRANDSTWIETE
-	2400	Brandstwiete	BRANDSTWIETE    	ALTSTADT        	BRANDSTWIETE    		BRT	BRANDSTWIETE
-	247	Gerhart-Hauptmann-Platz	GERHART-HAUPTMAN	GERHART-HAUPTMAN			GHP	GERHART-HAUPTMANN-PL
-	241	Warnckesweg	WARNCKESWEG     	WARNCKESWEG     			WAR	WARNCKESWEG
-	242	Langenhorn Markt	LANGENHORN MKT.	LANGENHORN MARKT			LHM	LANGENHORN MARKT
-	243	Schnellbus Kirchdorf Süd	KIRCHDORF SÜD   	SCHNELLBUS      	KIRCHDORF SÜD   		KIR	KIRCHDORF SÜD
-	244	Schnellbus Lufthansa-Basis	LUFTHANSA-BASIS 	SCHNELLBUS      	LUFTHANSA-BASIS 		LFT	LUFTHANSA-BASIS
-	245	U Feldstraße	U FELDSTRAßE    	U FELDSTRAßE    			FEB	U FELDSTRAßE
-	246	Goldbekplatz	GOLDBEKPLATZ    	GOLDBEKPLATZ    			GOP	GOLDBEKPLATZ
-{ALLEX}	9697	Innovationslinie		INNOVATIONSLINIE
-	100	Kirchenallee	LINIE E         	STADTRUNDFAHRT  	LINIE E         	Stadtrundfahrt  		LIENE E
-	724	Bf. Altona	BF. ALTONA      	SCHNELLBUS      	BF. ALTONA      		ATH	BF. ALTONA
-	725	Hauptbahnhof ZOB	HAUPTBAHNHOF ZOB	SCHNELLBUS      	HAUPTBAHNHOF ZOB		ZAL	HAUPTBAHNHOF ZOB
-	248	U Feldstraße	U FELDSTRAßE    	U FELDSTRAßE    			FEB	U FELDSTRAßE
-	620	Hauptbahnhof ZOB	SEV  HBF  ZOB   	SCHIENENERSATZ  	Richtung HBF ZOB			SEV HBF ZOB
-	625	Bf. Altona	SEV  BF ALTONA  	SCHIENENERSATZ  	Richtung Altona 			SEV BF ALTONA
-	622	S Nettelnburg	S NETTELNBURG   	S NETTELNBURG   				S Nettelnburg
-	249	Altstadt Brandstwiete	BRANDSTWIETE    	ALTSTADT        	BRANDSTWIETE    		BRT	BRANDSTWIETE
-	777	Bf. Altona                         383	BF ALTONA       	Bf. Altona      	ü. Fährterminal 		ATH	Bf. Altona
-	180	Schnellbus Altstadt Brandstwiete	BRANDSTWIETE    	SCHNELLBUS      	BRANDSTWIETE    		BRT	BRANDSTWIETE
-	181	Schnellbus U Borgweg	U BORGWEG       	SCHNELLBUS      	U BORGWEG       		BOW	U BORGWEG           
-	650	Bf. Altona                         SEV	BF. ALTONA      	 Ersatzverkehr  	   Bf Altona    	Ersatzverkehr   		Ersatzverkehr       
-	651	Hauptbahnhof ZOB                         SEV	HAUPTBAHNHOF    	 Ersatzverkehr  	  Hauptbahnhof  	Ersatzverkehr   		Ersatzverkehr       
-[end]
+	Fügt ein Ziel hinzu. Bei "_allexit" handelt es sich um ein Ziel,
+	wo nie Leute einsteigen bzw. wo alle aussteigen. (z.B. Betriebsfahrt)
 
-*******************
-* B u s s t o p s *
-*******************
+	[addterminus_{allexit}]
+	{ident}
+	{texture-string}
+	{terminus station}
+	{string0}
+	{string1}
+	{...}
 
-[addbusstop_list]
-Hauptbahnhof ZOB	Hauptbahnhof ZOB	Hauptbahnhof ZOB	ZAL	Hauptbahnhof ZOB
-Hauptbahnhof Steintordamm	HBF/Steintordamm	Hauptbahnhof	HBF	Hauptbahnhof Steintordamm
-Hauptbahnhof Moenckebergstrasse	HBF/Mönckebergstraße	Hbf. Mönckebergstraße	Mönckebergstraße	Hauptbahnhof Moenckebergstrasse
-Gerhart-Hauptmann-Platz	Gerhart-Hauptmann-Pl	Gerhart-Hauptmann-Pl	Platz	Gerhart-Hauptmann-Platz
-Rathausmarkt	Rathausmarkt	Rathausmarkt	RAM	Rathausmarkt
-U Gaensemarkt	U Gänsemarkt	U Gänsemarkt		U Gaensemarkt
-U Stephansplatz	U Stephansplatz	U Stephansplatz		U Stephansplatz
-Bf. Dammtor	Bf. Dammtor	Bf. Dammtor		Bf. Dammtor
-Fontenay	Fontenay	Fontenay		Fontenay
-Boettgerstrasse	Böttgerstraße	Böttgerstraße		Boettgerstrasse
-Alsterchaussee	Alsterchaussee	Alsterchaussee		Alsterchaussee
-Sophienterrasse	Sophienterrasse	Sophienterrasse		Sophienterrasse
-Harvestehuder Weg	Harvestehuder Weg	Harvestehuder Weg		Harvestehuder Weg
-Streekbruecke	Streekbrücke	Streekbrücke		Streekbruecke
-Maria-Louisen-Strasse	Maria-Louisen-Straße	Maria-Louisen-Straße		Maria-Louisen-Strasse
-U Sierichstrasse	U Sierichstraße	U Sierichstraße		U Sierichstrasse
-Winterhude Markt	Winterhude Markt	Winterhude Markt	WIM	Winterhude Markt
-Lattenkampstieg	Lattenkampstieg	Lattenkampstieg		Lattenkampstieg
-Braamkamp	Braamkamp	Braamkamp		Braamkamp
-Wilhelm-Metzger-Strasse	Wilhelm-Metzger-Straße	Wilhelm-Metzger-Straße		Wilhelm-Metzger-Strasse
-Carl-Cohn-Strasse	Carl-Cohn-Straße	Carl-Cohn-Straße		Carl-Cohn-Strasse
-Hindenburgstrasse	Hindenburgstraße	Hindenburgstraße		Hindenburgstrasse
-U Alsterdorf	U Alsterdorf	U Alsterdorf	UAL	U Alsterdorf
-Bf. Altona	Bf. Altona	Bf. Altona	ATH	Bf. Altona
-Bf. Altona (Abfahrt)	Bf. Altona	Bf. Altona	ATH	Bf. Altona (Abfahrt)
-Bf. Altona (Pause L3)	Bf. Altona	Bf. Altona	ATH	Bf. Altona (Pause L3)
-Bf. Altona (Ankunft)	Bf. Altona	Bf. Altona	ATH	Bf. Altona
-Altonaer Poststrasse	Altonaer Poststraße	Altonaer Poststraße		Altonaer Poststrasse
-Moerkenstrasse	Mörkenstraße	Mörkenstraße		Moerkenstrasse
-Bluecherstrasse	Blücherstraße	Blücherstraße		Bluecherstrasse
-S Reeperbahn	S Reeperbahn	S Reeperbahn		S Reeperbahn
-Davidstrasse	Davidstraße	Davidstraße		Davidstrasse
-U St. Pauli	U St. Pauli	U St. Pauli		U St. Pauli
-Museum für Hamburg. Geschichte	Museum für Hamburg. Geschichte	Museum für Hamburg. Geschichte		Museum fuer Hamburg. Geschichte
-Handwerkskammer	Handwerkskammer	Handwerkskammer		Handwerkskammer
-Johannes-Brahms-Platz	Johannes-Brahms-Platz	Johannes-Brahms-Platz		Johannes-Brahms-Platz
-Dragonerstall	Dragonerstall	Dragonerstall		Dragonerstall
-Kleine Seilerstrasse	Kleine Seilerstraße	Kleine Seilerstraße		Kleine Seilerstrasse
-Hein-Hoyer-Strasse	Hein-Hoyer-Straße	Hein-Hoyer-Straße		Hein-Hoyer-Strasse
-Grosse Freiheit	Große Freiheit	Große Freiheit		Grosse Freiheit
-Kleine Marienstrasse	Kleine Marienstraße	Kleine Marienstraße		Kleine Marienstrasse
-Grosse Bergstrasse	Große Bergstraße	Große Bergstraße		Grosse Bergstrasse
-U S Jungfernstieg	U S Jungfernstieg	U S Jungfernstieg		U S Jungfernstieg
-U S Jungfernstieg (Nachtbus)	U S Jungfernstieg	U S Jungfernstieg		U S Jungfernstieg (Nachtbus)
-U Alsterdorf (Ankunft)	U Alsterdorf	U Alsterdorf	UAL	U Alsterdorf
-U Alsterdorf (Ankunft vorn)	U Alsterdorf	U Alsterdorf	UAL	U Alsterdorf
-U Alsterdorf (Abfahrt)	U Alsterdorf	U Alsterdorf	UAL	U Alsterdorf
-Überliegeplatz Adenauerallee	Überliegeplatz Adenauerallee	Überliegeplatz Adenauerallee	UAA	Überliegeplatz Adenauerallee
-Betriebshof Mesterkamp	Betriebshof Mesterkamp	Betriebshof Mesterkamp	M	Betriebshof Mesterkamp
-Rathausmarkt (Terminus 109)	Rathausmarkt	Rathausmarkt	RAM	Rathausmarkt
-Rathausmarkt (Terminus 688)	Rathausmarkt	Rathausmarkt	RAM	Rathausmarkt
-Rathaus Altona	Rathaus Altona	Rathaus Altona		Rathaus Altona
-Rathaus Altona 15	Rathaus Altona	Rathaus Altona		Rathaus Altona
-Elbberg	Elbberg	Elbberg		Elbberg
-Neumuehler Kirchenweg	Neumühler Kirchenweg	Neumühler Kirchenweg		Neumuehler Kirchenweg
-Kreuzfahrtterminal Altona	Kreuzfahrtterminal Altona	Kreuzfahrtterminal Altona		Kreuzfahrtterminal Altona
-Grosse Elbstrasse	Große Elbstraße	Große Elbstraße		Grosse Elbstrasse
-Sandberg	Sandberg	Sandberg		Sandberg
-Fischauktionshalle	Fischauktionshalle	Fischauktionshalle		Fischauktionshalle
-Behnstrasse	Behnstraße	Behnstraße		Behnstrasse
-Pepermoelenbek	Pepermölenbek	Pepermölenbek		Pepermoelenbek
-Bernhard-Nocht-Strasse	Bernhard-Nocht-Straße	Bernhard-Nocht-Straße		Bernhard-Nocht-Strasse
-U S Landungsbruecken	U S Landungsbrücken	U S Landungsbrücken		U S Landungsbruecken
-U Baumwall	U Baumwall	U Baumwall		U Baumwall
-Am Kaiserkai	Am Kaiserkai	Am Kaiserkai		Am Kaiserkai
-Am Sandtorkai	Am Sandtorkai	Am Sandtorkai		Am Sandtorkai
-Magellan-Terrassen	Magellan-Terrassen	Magellan-Terrassen		Magellan-Terrassen
-Marco-Polo-Terrassen	Marco-Polo-Terrassen	Marco-Polo-Terrassen		Marco-Polo-Terrassen
-U Ueberseequartier	U Überseequartier	U Überseequartier		U Ueberseequartier
-Osakaallee	Osakaallee	Osakaallee		Osakaallee
-Shanghaiallee (Ank. 1)	Shanghaiallee	Shanghaiallee		Shanghaiallee
-Shanghaiallee (Ank. 2)	Shanghaiallee	Shanghaiallee		Shanghaiallee
-Shanghaiallee (Abfahrt)	Shanghaiallee	Shanghaiallee		Shanghaiallee (Abfahrt)
-U Feldstrasse (Ankunft)	U Feldstraße	U Feldstraße		U Feldstrasse (Ankunft)
-U Feldstrasse (Abfahrt)	U Feldstraße	U Feldstraße		U Feldstrasse (Abfahrt)
-U Feldstrasse (Pause 1)	U Feldstraße	U Feldstraße		U Feldstrasse (Pause 1)
-U Feldstrasse (Pause 2)	U Feldstraße	U Feldstraße		U Feldstrasse (Pause 2)
-U Feldstrasse (Pause 3)	U Feldstraße	U Feldstraße		U Feldstrasse (Pause 3)
-Paulinenstrasse	Paulinenstraße	Paulinenstraße		Paulinenstrasse
-U St. Pauli	U St. Pauli	U St. Pauli		U St. Pauli
-Michaeliskirche	Michaeliskirche	Michaeliskirche		Michaeliskirche
-Grosser Burstah	Großer Burstah	Großer Burstah		Grosser Burstah
-Auf dem Sande (Pause 1)	Auf dem Sande	Auf dem Sande		Auf dem Sande
-Auf dem Sande (Pause 2)	Auf dem Sande	Auf dem Sande		Auf dem Sande
-Auf dem Sande (Abfahrt)	Auf dem Sande	Auf dem Sande		Auf dem Sande (Abfahrt)
-Singapurstrasse	Singapurstraße	Singapurstraße		Singapurstrasse
-Bei St. Annen	Bei St. Annen	Bei St. Annen		Bei St. Annen
-Brandstwiete	Brandstwiete	Brandstwiete		Brandstwiete
-Brandstwiete (Willy-Brandt-Str.)	Brandstwiete	Brandstwiete		Brandstwiete (Willy-Brandt-Str.)
-Brandstwiete (Pause 1)	Brandstwiete	Brandstwiete		Brandstwiete (Pause 1)
-Brandstwiete (Pause 2)	Brandstwiete	Brandstwiete		Brandstwiete (Pause 2)
-Brandstwiete (Pause 3)	Brandstwiete	Brandstwiete		Brandstwiete (Pause 3)
-Rathausmarkt Petrikirche	Rathausmarkt Petrikirche	Rathausmarkt Petrikirche		Rathausmarkt Petrikirche
-Hauptbahnhof Kirchenallee	HBF/Kirchenallee	Hbf. Kirchenallee		Hauptbahnhof Kirchenallee
-Gurlittstrasse	Gurlittstraße	Gurlittstraße		Gurlittstrasse
-AK St. Georg	AK St. Georg	AK St. Georg		AK St. Georg
-Graumannsweg	Graumannsweg	Graumannsweg		Graumannsweg
-Mundsburger Bruecke	Mundsburger Brücke	Mundsburger Brücke		Mundsburger Bruecke
-Averhoffstrasse	Averhoffstraße	Averhoffstraße		Averhoffstrasse
-Zimmerstrasse	Zimmerstraße	Zimmerstraße		Zimmerstrasse
-Muehlenkamp Hofweg	Mühlenkamp Hofweg	Mühlenkamp Hofweg		Muehlenkamp Hofweg
-Gertigstrasse	Gertigstraße	Gertigstraße		Gertigstrasse
-Goldbekplatz	Goldbekplatz	Goldbekplatz		Goldbekplatz
-Semperstrasse	Semperstraße	Semperstraße		Semperstrasse
-U Borgweg (Ankunft)	U Borgweg	U Borgweg		U Borgweg
-U Borgweg (Abfahrt)	U Borgweg	U Borgweg		U Borgweg
-U Borgweg (Pause 1)	U Borgweg	U Borgweg		U Borgweg (Pause 1)
-U Borgweg (Pause 2)	U Borgweg	U Borgweg		U Borgweg (Pause 2)
-U Borgweg (Pause 3)	U Borgweg)	U Borgweg		U Borgweg (Pause 3)
-U Borgweg (Pause 4)	U Borgweg	U Borgweg		U Borgweg (Pause 4)
-U Borgweg	U Borgweg	U Borgweg		U Borgweg
-Betriebshof Mesterkamp (Aussetzer)	Bth. Mesterkamp	Bth. Mesterkamp		Bth. Mesterkamp
-Betriebshof Mesterkamp Aussetzer G	Bth. Mesterkamp	Bth. Mesterkamp		Bth. Mesterkamp
-Betriebshof Mesterkamp Aussetzer S	Bth. Mesterkamp	Bth. Mesterkamp		Bth. Mesterkamp
-Betriebshof Mesterkamp Einsetzer	Bth. Mesterkamp	Bth. Mesterkamp		Bth. Mesterkamp
-Betriebshof Mesterkamp	Bth. Mesterkamp	Bth. Mesterkamp		Bth. Mesterkamp
-U Borgweg (Einsetzer)	U Borgweg	U Borgweg		U Borgweg
-Bf. Altona (Einsetzer)	Bf. Altona	Bf. Altona		Bf. Altona
-Shanghaiallee (Einsetzer)	Shanghaiallee	Shanghaiallee		Shanghaiallee
-Auf dem Sande (Einsetzer)	Auf dem Sande	Auf dem Sande		Auf dem Sande
-Brandstwiete (Einsetzer)	Brandstwiete	Brandstwiete		Brandstwiete
-Goldbekplatz (Einsetzer)	Goldbekplatz	Goldbekplatz		Goldbekplatz
-Gerhart-Hauptmann-Platz (Einsetzer)	Gerhart-Hauptmann-Platz	Gerhart-Hauptmann-Platz		Gerhart-Hauptmann-Platz
-U Feldstrasse (Einsetzer)	U Feldstraße	U Feldstraße		U Feldstraße
-Böttgerstraße	Böttgerstraße	Böttgerstraße		Boettgerstrasse
-SR Kirchenallee	KIRCHENALLEE    	Kirchenallee		Kirchenallee
-SR Rathausmarkt	RATHAUSMARKT    	RATHAUSMARKT		RATHAUSMARKT
-SR Michaeliskirche	MICHAELISKIRCHE 	Michaeliskirche		Michaeliskirche
-SR U S Landungsbruecken	U S LANDUNGSBRÜC	U S Landungsbrücken		U S Landungsbruecken
-Hauptbahnhof Spitaler Straße	HAUPTBAHNHOF SPI	Hauptbahnhof Spitaler Straße		HBF Spitaler Straße
-Ferdinandstor	FERDINANDSTOR   	Ferdinandstor		Ferdinandstor
-Hauptbahnhof Steintorwall	HBF STEINTORWALL	Hauptbahnhof Steintorwall		HBF Steintorwall
-Jahnring (Mitte)	JAHNRING        	Jahnring		Jahnring
-U Stephansplatz (112 EW)	U STEPHANSPLATZ 	U Stephansplatz		U Stephansplatz
-U Borgweg (179)	U BORGWEG       	U Borgweg		U Borgweg
-Hauptbahnhof ZOB (Abf. ZOB 1)	HAUPTBAHNHOF ZOB	Hauptbahnhof ZOB		Hauptbahnhof ZOB
-Bf. Altona (Pause L4)	BF. ALTONA      	BF. ALTONA	ATH	Bf. Altona Pause L4
-Bf. Altona (vorn)	BF. ALTONA      	Bf. Altona	ATH	Bf. Altona
-Bf. Altona Abfahrt 20-25	BF. ALTONA      	Bf. Altona	ATH	Bf. Altona
-Rathausmarkt (Ri. UAL, nur Ausstieg)	RATHAUSMARKT    	Rathausmarkt	RAM	Rathausmarkt
-Bf. Altona (Pause L1)	BF. ALTONA      	Bf. Altona (Pause L1)	ATH	Bf. Altona Pause L1
-Überliegeplatz Adenauerallee (Pause Mitte)	ÜBERLIEGEPLATZ  	Überliegeplatz Adenauerallee	UAA	Überliegeplatz Mitte
-Bf. Altona (Pause H)	BF. ALTONA      	Bf. Altona (Pause H)	ATH	Bf. Altona (Pause H)
-Überliegeplatz Adenauerallee (Pause vorn)	ÜBERLIEGEPLATZ  	Überliegeplatz Adenauerallee	UAA	Überliegeplatz vorn
-S Reeperbahn 283	S REEPERBAHN    	S Reeperbahn		S Reeperbahn
-Blücherstraße Ri. ATH	BLÜCHERSTRAßE   	Blücherstraße		Blücherstraße
-Bf. Altona (Pause L2)	BF. ALTONA      	Bf. Altona (Pause L2)	ATH	Bf. Altona Pause L2
-Bf. Altona (B)	BF. ALTONA      	Bf. Altona	ATH	Bf. Altona
-U Alsterdorf Ri. Jahnring	U ALSTERDORF    	U Alsterdorf		U Alsterdorf
-U Borgweg (179 Ankunft)	U BORGWEG       	U Borgweg		U Borgweg
-Hauptbahnhof ZOB (Abf. ZOB 1)	HAUPTBAHNHOF ZOB	Hauptbahnhof ZOB		Hauptbahnhof ZOB
-[end]
+	die Nummer dient der Kodierung, der String der Auswahl der entsprechenden
+	Ziel-Austauschtextur.
 
-***************
-* R o u t e s *
-***************
+
+	Fehlt der Hinweis "allexit", muss zusätzlich in der dritten Zeile die Haltestelle
+	angegeben werden, wo alle aussteigen. Dies meistens der gleiche Sting wie der der
+	Austauschtextur - muss aber nicht sein, falls entweder die Textur oder aber die Haltestelle
+	über weitere Zusätze verfügt - aus diesem Grund gibt es beide Einträge separat.
+
+	Beispiel:
+	
+	[addterminus]				<= Titel
+	3							<= Code
+	SP_Johannesstift			<= Textur-Change-ID
+	Johannesstift				<= Haltestellenbezeichnung der Endhaltestelle
+	JOHANNESSTIFT				<= String 0: IBIS-Anzeige
+	    SPANDAU    				<= String 1: Front-Annax  - obere Zeile
+	 JOHANNESSTIFT				<= String 2: Front-Annax  - untere Zeile
+	 JOHANNESSTIFT				<= String 3: Seiten-Annax beim SD
+	................			<= Hilfslinie
+
+[addterminus_allexit]
+0
+Empty
+
+
+
+A
+
+................
+[addterminus_allexit]
+3
+hochbahn.de
+
+                                           h   o   c   h   b   a   h   n   .   d   e
+hochbahn.de
+Sonderziel
+ 
+................
+[addterminus_allexit]
+683
+hochbahn.de
+
+                                           h   o   c   h   b   a   h   n   .   d   e
+hochbahn.de
+Sonderziel
+ 
+................
+[addterminus_allexit]
+2
+hochbahn.de
+
+                                           h   o   c   h   b   a   h   n   .   d   e
+hochbahn.de
+Sonderziel
+ 
+................
+[addterminus_allexit]
+2000
+Betriebshof Mesterkamp
+
+                                           h   o   c   h   b   a   h   n   .   d   e
+hochbahn.de
+Sonderziel
+ 
+................
+[addterminus_allexit]
+2001
+Betriebshof Alsterdorf
+
+                                           h   o   c   h   b   a   h   n   .   d   e
+hochbahn.de
+Sonderziel
+ 
+................
+[addterminus_allexit]
+505
+Matrixtest
+
+###
+A
+A
+................
+[addterminus_allexit]
+121
+Überliegeplatz Adenauerallee
+
+                                           h   o   c   h   b   a   h   n   .   d   e
+hochbahn.de
+Sonderziel
+UAA
+................
+[addterminus_allexit]
+122
+Überliegeplatz Adenauerallee (Pause vorn)
+
+                                           h   o   c   h   b   a   h   n   .   d   e
+hochbahn.de
+Sonderziel
+UAA
+................
+[addterminus_allexit]
+123
+Überliegeplatz Adenauerallee (Pause Mitte)
+
+                                           h   o   c   h   b   a   h   n   .   d   e
+hochbahn.de
+Sonderziel
+UAA
+................
+[addterminus]
+33
+Hauptbahnhof Steintordamm
+
+                                               H a u p t b a h n h o f
+Hauptbahnhof
+
+HBF
+................
+[addterminus]
+27
+Hauptbahnhof ZOB
+ Hauptbahnhof ZOB
+
+Hauptbahnhof ZOB
+
+ZAL
+................
+[addterminus]
+582
+U Alsterdorf
+
+                                      U          A   l   s   t   e   r   d   o   r   f
+U Alsterdorf
+
+UAL
+................
+[addterminus]
+423
+Winterhude Markt
+ Winterhude Markt
+
+Winterhude Markt
+
+WIM
+................
+[addterminus]
+5
+Rathausmarkt
+
+                                                R a t h a u s m a r k t
+Rathausmarkt
+
+RAM
+................
+[addterminus]
+5555
+Rathausmarkt
+
+                                                R a t h a u s m a r k t
+Rathausmarkt
+
+RAM
+................
+[addterminus]
+14
+Bf. Altona
+
+								           B   f  .          A    l    t    o    n    a
+Bf. Altona
+
+ATH
+................
+[addterminus]
+223
+S Reeperbahn
+
+                                               S          R e e p e r b a h n
+S Reeperbahn
+
+SRP
+................
+[addterminus]
+668
+Bardowick
+
+                            B A R D O W I C K
+BARDOWICK
+
+BAR
+................
+[addterminus]
+555
+Rathausmarkt
+
+                                                R a t h a u s m a r k t
+Rathausmarkt
+
+RAM
+................
+[addterminus]
+583
+U Alsterdorf (Ankunft)
+
+                                             U        A l s t e r d o r f
+U Alsterdorf
+
+UAL
+................
+[addterminus]
+584
+U Alsterdorf (Ankunft vorn)
+
+                                             U        A l s t e r d o r f
+U Alsterdorf
+
+UAL
+................
+[addterminus]
+51
+Rathausmarkt (Terminus 109)
+
+                                                R a t h a u s m a r k t
+Rathausmarkt
+
+RAM
+................
+[addterminus]
+52
+Rathausmarkt (Terminus M4)
+
+                                                R a t h a u s m a r k t
+Rathausmarkt
+
+RAM
+................
+[addterminus]
+110
+Zollvereinsstraße
+     ZOLLVEREINS-      STRASSE
+
+ZOLLVEREINSSTRASSE
+
+ZVS
+................
+[addterminus]
+150
+Bf. Bergedorf
+
+                        B f      B e r g e d o r f
+BF. BERGEDORF
+
+BBF
+................
+[addterminus]
+000
+Thomas-Mann-Straße
+     Thomas-Mann-         Straße
+
+THOMAS-MANN-STRASSE
+
+TMS
+................
+[addterminus]
+000
+U S Barmbek
+
+                       U            S                 B   a   r   m   b   e   k
+U-S-BARMBEK
+
+BAB
+................
+[addterminus]
+569
+Wildacker
+    Eidelstedt        Wildacker
+
+WILDACKER
+
+WDA
+................
+[addterminus]
+5690
+Eidelstedt Wildacker
+    Eidelstedt        Wildacker
+
+WILDACKER
+
+WDA
+................
+[addterminus]
+425
+Hauptbahnhof
+ Hauptbahnhof ZOB
+
+Hauptbahnhof ZOB
+
+ZOB
+................
+[addterminus]
+538
+A-Burgwedel
+
+                          A        B u r g w e d e l
+A-BURGWEDEL
+
+BWL
+................
+[addterminus]
+459
+U-Rödingsmarkt
+   U-RÖDINGSMARKT
+
+U-RÖDINGSMARKT
+
+RDM
+................
+[addterminus]
+593
+U-Borgweg
+
+                            U          B   o   r   g   w   e   g
+U Borgweg
+
+BOW
+................
+[addterminus]
+594
+U Borgweg
+
+                            U          B   o   r   g   w   e   g
+U Borgweg
+
+BOW
+................
+[addterminus]
+470
+Rugenbarg
+     RUGENBARG
+
+RUGENBARG
+
+RUN
+................
+[addterminus]
+282
+U-Messberg
+     U-MESSBERG
+
+U-MESSBERG
+
+MGB
+................
+[addterminus]
+4593
+U-Rödingsmarkt 3
+    U-RÖDINGSMARKT
+
+RUGENBARG
+
+RU3
+................
+[addterminus]
+2823
+U-Messberg 3
+     U-MESSBERG
+
+U-MESSBERG
+
+MG3
+................
+[addterminus]
+484
+Schnellbus Schenefelder Pl.
+     Schnellbus    Schenefelder Pl.
+
+SCHNELLBUS SCHENEFELDER PL.
+
+LOR
+................
+[addterminus]
+179
+Schnellbus Bramfelder Dorfpl.
+     Schnellbus   Bramfelder Dorfpl.
+
+SCHNELLBUS BRAMFELDER DORFPL.
+
+BFD
+................
+[addterminus]
+396
+Schnellbus Rahlstedt
+      Schnellbus       Rahlstedt
+
+SCHNELLBUS RAHLSTEDT
+
+SOK
+................
+[addterminus]
+1888
+Schnellbus Messe
+      Schnellbus     Hamburg Messe
+
+SCHNELLBUS HAMBURG MESSE
+
+HME
+................
+[addterminus]
+225
+Schnellbus Farmsen Berne
+      Schnellbus     Farmsen Berne
+
+SCHNELLBUS FARMSEN BERNE
+
+BSE
+................
+[addterminus]
+158
+Schnellbus S Blankenese
+      Schnellbus      S Blankenese
+
+SCHNELLBUS S BLANKENESE
+
+BBL
+................
+[addterminus]
+37
+Hamm Braune Brücke
+         Hamm        Braune Brücke
+
+HAMM BRAUNE BRÜCKE
+
+BRB
+................
+[addterminus]
+38
+Hamm Osterbrookplatz
+         Hamm        Osterbrookplatz
+
+HAMM OSTERBROOKPLATZ
+
+OSB
+................
+[addterminus]
+39
+U Fuhlsbüttel
+   U Fuhlsbüttel
+
+U FUHLSBÜTTEL
+
+UFB
+................
+[addterminus]
+46
+Neumühlen Övelgönne
+       Neumühlen        Övelgönne
+
+NEUMÜHLEN ÖVELGÖNNE
+
+NEU
+................
+[addterminus]
+461
+Bramfeld Am Stühm-Süd
+        Bramfeld      Am Stühm-Süd
+
+BRAMFELD AM STÜHM-SÜD
+
+ASS
+................
+[addterminus]
+462
+Hummelsbüttel Lentersweg
+    Hummelsbüttel      Lentersweg
+
+HUMMELSBÜTTEL LENTERSWEG
+
+LEN
+................
+[addterminus]
+463
+Mundsburger Brücke
+     Mundsburger        Brücke
+
+MUNDSBURGER BRÜCKE
+
+MBR
+................
+[addterminus_allexit]
+969
+Wasch mich
+      WASCH MICH
+
+WASCH MICH
+
+ 
+................
+[addterminus_allexit]
+970
+Leider keine Mitfahrt
+     Leider keine       Mitfahrt
+
+LEIDER KEINE MITFAHRT
+
+ 
+................
+[addterminus_allexit]
+681
+Fahrtende, bitte nicht einsteigen
+ Fahrtende, bitte nicht einsteigen
+
+FAHRTENDE
+Sonderziel
+
+................
+[addterminus_allexit]
+971
+Ich bin ein Bus
+  ICH BIN EIN BUS
+
+ICH BIN EIN BUS
+
+ 
+................
+[addterminus]
+296
+S Rissen
+
+                               S       R   i   s   s   e   n
+S RISSEN
+
+RIB
+................
+[addterminus]
+292
+Schenefelder Platz
+     Schenefelder         Platz
+
+SCHENEFELDER PLATZ
+
+LOR
+................
+[addterminus]
+293
+Schenefeld Achterndiek
+       Schenefeld      Achterndiek
+
+SCHENEFELD ACHTERNDIEK
+
+SAD
+................
+[addterminus]
+280
+Bf. Altona
+       BF. ALTONA
+
+Bf. Altona
+
+ATH
+................
+[addterminus]
+644
+Alsterchaussee
+
+                                 A l s t e r c h a u s s e e
+Alsterchaussee
+
+MAC
+................
+[addterminus]
+284
+S Klein Flottbek
+
+                        S        K  l  e  i  n         F  l  o  t  t  b  e  k
+S KLEIN FLOTTBEK
+
+KFB
+................
+[addterminus]
+10
+Schnelsen Kalvslohtwiete
+       Schnelsen     Kalvslohtwiete
+
+SCHNELSEN KALVSLOHTWIETE
+
+KTW
+................
+[addterminus]
+565
+Eidelstedter Platz
+     Eidelstedter         Platz
+
+EIDELSTEDTER PLATZ
+
+EDP
+................
+[addterminus]
+500
+U Alsterdorf
+
+                                             U        A l s t e r d o r f
+U Alsterdorf
+
+UAL
+................
+[addterminus]
+300
+Bf. Rahlstedt
+
+                             B f        R a h l s t e d t
+BF. RAHLSTEDT
+
+RAL
+................
+[addterminus]
+409
+U Niendorf Markt
+
+                       U        N i e n d o r f        M a r k t
+U NIENDORF MARKT
+
+NIM
+................
+[addterminus]
+240
+U Billstedt
+
+                            U        B i l l s t e d t
+U BILLSTEDT
+
+BIL
+................
+[addterminus]
+295
+S Poppenbüttel
+
+                            S     P o p p e n b ü t t e l
+S POPPENBÜTTEL
+
+PBS
+................
+[addterminus]
+374
+U Kellinghusenstraße
+  U Kellinghusen-      straße
+
+U KELLINGHUSENSTRASSE
+
+KEL
+................
+[addterminus]
+3744
+U Kellinghusenstraße
+  U Kellinghusen-      straße
+
+U KELLINGHUSENSTRASSE
+
+KEL
+................
+[addterminus]
+164
+U Wandsbek Gartenstadt
+     U Wandsbek-      Gartenstadt
+
+U WANDSBEK-GARTENSTADT
+
+WKG
+................
+[addterminus]
+352
+U Burgstraße
+
+                          U        B u r g s t r a ß e
+U BURGSTRASSE
+
+BUR
+................
+[addterminus]
+717
+Gärtnerstraße
+      Hoheluft      Gärtnerstraße
+
+GÄRTNERSTRASSE
+
+GAE
+................
+[addterminus]
+492
+S Rübenkamp
+
+                        S              R  ü  b  e  n  k  a  m  p
+S RÜBENKAMP
+
+RPS
+................
+[addterminus]
+930
+Horn Böcklerstraße
+       HORN        BÖCKLERSTRASSE
+
+HORN BÖCKLERSTRASSE
+
+BOE
+................
+[addterminus]
+639
+S Wedel
+        <S> WEDEL
+
+S WEDEL
+
+WSF
+................
+[addterminus]
+2455
+S Nettelnburg
+ <S> NETTELNBURG
+
+S NETTELNBURG
+
+NSB
+................
+[addterminus]
+603
+Schnelsen Grothwisch
+       SCHNELSEN        GROTHWISCH
+
+SCHNELSEN GROTHWISCH
+
+GRT
+................
+[addterminus]
+355
+Osdorfer Born Immenbusch
+   OSDORFER BORN      IMMENBUSCH
+
+OSDORFER BORN IMMENBUSCH
+
+IMM
+................
+[addterminus]
+252
+Neu Wulmstorf
+   NEU WULMSTORF
+
+NEU WULMSTORF
+
+NWU
+................
+[addterminus]
+706
+Rahlstedt Großlohe
+      RAHLSTEDT        GROSSLOHE
+
+RAHLSTEDT GROSSLOHE
+
+RGL
+................
+[addterminus]
+707
+Kirchenallee
+
+
+
+
+
+................
+[addterminus_allexit]
+589
+FAHRSCHULE
+
+                F A H R S C H U L E
+FAHRSCHULE
+Sonderziel
+   
+................
+[addterminus_allexit]
+684
+SCHULBUS (klein)
+         SCHULBUS
+
+SCHULBUS
+
+   
+................
+[addterminus_allexit]
+685
+SCHULBUS (gross)
+
+                              S C H U L B U S
+SCHULBUS
+
+   
+................
+[addterminus]
+396
+Rahlstedt Ost Sorenkoppel
+   RAHLSTEDT OST     SORENKOPPEL
+
+RAHLSTEDT OST SORENKOPPEL
+
+SOK
+................
+[addterminus]
+647
+Rahlstedt Eichberg
+       RAHLSTEDT         EICHBERG
+
+RAHLSTEDT EICHBERG
+
+EIS
+................
+[addterminus]
+648
+U Farmsen
+
+                                    U         F a r m s e n
+U FARMSEN
+
+FAR
+................
+[addterminus]
+316
+Meiendorf Ost Künnekestraße
+    MEIENDORF OST      KÜNNEKESTR.
+
+RAHLSTEDT OST KÜNNEKESTR.
+
+KNS
+................
+[addterminus]
+232
+Fischbeker Heideweg
+      Fischbeker        Heideweg
+
+FISCHBEKER HEIDEWEG
+
+FSH
+................
+[addterminus]
+2335
+Elbe-Einkaufszentrum
+  Elbe-Einkaufsz.   J.-Brecht-Str.
+
+ELBE-EINKAUFSZENTRUM
+
+EZK
+................
+[addterminus]
+2336
+Pflegezentrum Lutherpark
+    Pflegezentrum      Lutherpark
+
+PFLEGEZENTRUM LUTHERPARK
+
+PHK
+................
+[addterminus]
+2334
+Fischmarkt
+
+                                 F   i   s   c   h   m   a   r   k   t
+FISCHMARKT
+
+ARA
+................
+[addterminus]
+233
+Teufelsbrück Fähre
+    TEUFELSBRÜCK        FÄHRE
+
+TEUFELSBRÜCK FÄHRE
+
+TFB
+................
+[addterminus]
+236
+Shanghaiallee
+      HafenCity      Shanghaiallee
+
+Shanghaiallee
+
+SHA
+................
+[addterminus]
+238
+Kraftwerk Tiefstack
+    Kraftwerk         Tiefstack
+
+KRAFTWERK TIEFSTACK
+
+TIF
+................
+[addterminus]
+239
+Auf dem Sande
+    Speicherstadt    Auf dem Sande
+
+Auf dem Sande
+
+ASA
+................
+[addterminus]
+240
+Altstadt Brandstwiete
+     Altstadt       Brandstwiete
+
+Brandstwiete
+
+BRT
+................
+[addterminus]
+2400
+Brandstwiete
+     Altstadt       Brandstwiete
+
+Brandstwiete
+
+BRT
+................
+[addterminus]
+247
+Gerhart-Hauptmann-Platz
+      Gerhart-     Hauptmann-Platz
+
+Gerhart-Hauptmann-Platz
+
+GHP
+................
+[addterminus]
+241
+Warnckesweg
+   WARNCKESWEG
+
+WARNCKESWEG
+
+WAR
+................
+[addterminus]
+242
+Langenhorn Markt
+LANGENHORN MKT.
+
+LANGENHORN MARKT
+
+LHM
+................
+[addterminus]
+243
+Schnellbus Kirchdorf Süd
+      Schnellbus      Kirchdorf Süd
+
+SCHNELLBUS KIRCHDORF SÜD
+
+KIR
+................
+[addterminus]
+244
+Schnellbus Lufthansa-Basis
+      Schnellbus     Lufthansa Basis
+
+SCHNELLBUS LUFTHANSA BASIS
+
+LFT
+................
+[addterminus]
+245
+U Feldstraße
+     U Feldstraße   über U St. Pauli
+
+U Feldstraße
+
+FEB
+................
+[addterminus]
+246
+Goldbekplatz
+      Winterhude      Goldbekplatz
+
+Goldbekplatz
+
+GOP
+................
+[addterminus_allexit]
+9697
+Innovationslinie
+
+       I  n  n  o  v  a  t  i  o  n  s  l  i  n  i  e
+Innovationslinie
+
+ 
+................
+[addterminus]
+9698
+Aus Vision wird Realität
+    Aus Vision     wird Realität
+
+Aus Vision wird Realität
+
+
+................
+
+[addbusstop]
+Hauptbahnhof ZOB
+Hauptbahnhof ZOB
+Hauptbahnhof ZOB
+ZAL
+Hauptbahnhof ZOB
+...................
+
+[addbusstop]
+Hauptbahnhof Steintordamm
+HBF/Steintordamm
+Hauptbahnhof
+HBF
+Hauptbahnhof Steintordamm
+...................
+
+[addbusstop]
+Hauptbahnhof Moenckebergstrasse
+HBF/Mönckebergstraße
+Hbf. Mönckebergstraße
+Mönckebergstraße
+Hauptbahnhof Moenckebergstrasse
+...................
+
+[addbusstop]
+Gerhart-Hauptmann-Platz
+Gerhart-Hauptmann-Pl
+Gerhart-Hauptmann-Pl
+Platz
+Gerhart-Hauptmann-Platz
+...................
+
+[addbusstop]
+Rathausmarkt
+Rathausmarkt
+Rathausmarkt
+RAM
+Rathausmarkt
+...................
+
+[addbusstop]
+U Gaensemarkt
+U Gänsemarkt
+U Gänsemarkt
+
+U Gaensemarkt
+...................
+
+[addbusstop]
+U Stephansplatz
+U Stephansplatz
+U Stephansplatz
+
+U Stephansplatz
+...................
+[addbusstop]
+Bf. Dammtor
+Bf. Dammtor
+Bf. Dammtor
+
+Bf. Dammtor
+...................
+[addbusstop]
+Fontenay
+Fontenay
+Fontenay
+
+Fontenay
+...................
+[addbusstop]
+Boettgerstrasse
+Böttgerstraße
+Böttgerstraße
+
+Boettgerstrasse
+...................
+[addbusstop]
+Alsterchaussee
+Alsterchaussee
+Alsterchaussee
+
+Alsterchaussee
+...................
+[addbusstop]
+Sophienterrasse
+Sophienterrasse
+Sophienterrasse
+
+Sophienterrasse
+...................
+[addbusstop]
+Harvestehuder Weg
+Harvestehuder Weg
+Harvestehuder Weg
+
+Harvestehuder Weg
+...................
+[addbusstop]
+Streekbruecke
+Streekbrücke
+Streekbrücke
+
+Streekbruecke
+...................
+[addbusstop]
+Maria-Louisen-Strasse
+Maria-Louisen-Straße
+Maria-Louisen-Straße
+
+Maria-Louisen-Strasse
+...................
+[addbusstop]
+U Sierichstrasse
+U Sierichstraße
+U Sierichstraße
+
+U Sierichstrasse
+...................
+[addbusstop]
+Winterhude Markt
+Winterhude Markt
+Winterhude Markt
+WIM
+Winterhude Markt
+...................
+[addbusstop]
+Lattenkampstieg
+Lattenkampstieg
+Lattenkampstieg
+
+Lattenkampstieg
+...................
+[addbusstop]
+Braamkamp
+Braamkamp
+Braamkamp
+
+Braamkamp
+...................
+[addbusstop]
+Wilhelm-Metzger-Strasse
+Wilhelm-Metzger-Straße
+Wilhelm-Metzger-Straße
+
+Wilhelm-Metzger-Strasse
+...................
+[addbusstop]
+Carl-Cohn-Strasse
+Carl-Cohn-Straße
+Carl-Cohn-Straße
+
+Carl-Cohn-Strasse
+...................
+[addbusstop]
+Hindenburgstrasse
+Hindenburgstraße
+Hindenburgstraße
+
+Hindenburgstrasse
+...................
+[addbusstop]
+U Alsterdorf
+U Alsterdorf
+U Alsterdorf
+UAL
+U Alsterdorf
+...................
+[addbusstop]
+Bf. Altona
+Bf. Altona
+Bf. Altona
+ATH
+Bf. Altona
+...................
+[addbusstop]
+Bf. Altona (Abfahrt)
+Bf. Altona
+Bf. Altona
+ATH
+Bf. Altona (Abfahrt)
+...................
+[addbusstop]
+Bf. Altona (Pause L3)
+Bf. Altona
+Bf. Altona
+ATH
+Bf. Altona (Pause L3)
+...................
+[addbusstop]
+Bf. Altona (Ankunft)
+Bf. Altona
+Bf. Altona
+ATH
+Bf. Altona
+...................
+[addbusstop]
+Altonaer Poststrasse
+Altonaer Poststraße
+Altonaer Poststraße
+
+Altonaer Poststrasse
+...................
+[addbusstop]
+Moerkenstrasse
+Mörkenstraße
+Mörkenstraße
+
+Moerkenstrasse
+...................
+[addbusstop]
+Bluecherstrasse
+Blücherstraße
+Blücherstraße
+
+Bluecherstrasse
+...................
+[addbusstop]
+S Reeperbahn
+S Reeperbahn
+S Reeperbahn
+
+S Reeperbahn
+...................
+[addbusstop]
+Davidstrasse
+Davidstraße
+Davidstraße
+
+Davidstrasse
+...................
+[addbusstop]
+U St. Pauli
+U St. Pauli
+U St. Pauli
+
+U St. Pauli
+...................
+[addbusstop]
+Museum für Hamburg. Geschichte
+Museum für Hamburg. Geschichte
+Museum für Hamburg. Geschichte
+
+Museum fuer Hamburg. Geschichte
+...................
+[addbusstop]
+Handwerkskammer
+Handwerkskammer
+Handwerkskammer
+
+Handwerkskammer
+...................
+[addbusstop]
+Johannes-Brahms-Platz
+Johannes-Brahms-Platz
+Johannes-Brahms-Platz
+
+Johannes-Brahms-Platz
+...................
+[addbusstop]
+Dragonerstall
+Dragonerstall
+Dragonerstall
+
+Dragonerstall
+...................
+[addbusstop]
+Kleine Seilerstrasse
+Kleine Seilerstraße
+Kleine Seilerstraße
+
+Kleine Seilerstrasse
+...................
+[addbusstop]
+Hein-Hoyer-Strasse
+Hein-Hoyer-Straße
+Hein-Hoyer-Straße
+
+Hein-Hoyer-Strasse
+...................
+[addbusstop]
+Grosse Freiheit
+Große Freiheit
+Große Freiheit
+
+Grosse Freiheit
+...................
+[addbusstop]
+Kleine Marienstrasse
+Kleine Marienstraße
+Kleine Marienstraße
+
+Kleine Marienstrasse
+...................
+[addbusstop]
+Grosse Bergstrasse
+Große Bergstraße
+Große Bergstraße
+
+Grosse Bergstrasse
+...................
+[addbusstop]
+U S Jungfernstieg
+U S Jungfernstieg
+U S Jungfernstieg
+
+U S Jungfernstieg
+...................
+[addbusstop]
+U S Jungfernstieg (Nachtbus)
+U S Jungfernstieg
+U S Jungfernstieg
+
+U S Jungfernstieg (Nachtbus)
+...................
+[addbusstop]
+U Alsterdorf (Ankunft)
+U Alsterdorf
+U Alsterdorf
+UAL
+U Alsterdorf
+...................
+[addbusstop]
+U Alsterdorf (Ankunft vorn)
+U Alsterdorf
+U Alsterdorf
+UAL
+U Alsterdorf
+...................
+[addbusstop]
+U Alsterdorf (Abfahrt)
+U Alsterdorf
+U Alsterdorf
+UAL
+U Alsterdorf
+...................
+[addbusstop]
+Überliegeplatz Adenauerallee
+Überliegeplatz Adenauerallee
+Überliegeplatz Adenauerallee
+UAA
+Überliegeplatz Adenauerallee
+...................
+[addbusstop]
+Betriebshof Mesterkamp
+Betriebshof Mesterkamp
+Betriebshof Mesterkamp
+M
+Betriebshof Mesterkamp
+...................
+[addbusstop]
+Rathausmarkt (Terminus 109)
+Rathausmarkt
+Rathausmarkt
+RAM
+Rathausmarkt
+...................
+[addbusstop]
+Rathausmarkt (Terminus 688)
+Rathausmarkt
+Rathausmarkt
+RAM
+Rathausmarkt
+...................
+[addbusstop]
+Rathaus Altona
+Rathaus Altona
+Rathaus Altona
+
+Rathaus Altona
+...................
+[addbusstop]
+Elbberg
+Elbberg
+Elbberg
+
+Elbberg
+...................
+[addbusstop]
+Neumuehler Kirchenweg
+Neumühler Kirchenweg
+Neumühler Kirchenweg
+
+Neumuehler Kirchenweg
+...................
+[addbusstop]
+Kreuzfahrtterminal Altona
+Kreuzfahrtterminal Altona
+Kreuzfahrtterminal Altona
+
+Kreuzfahrtterminal Altona
+...................
+[addbusstop]
+Grosse Elbstrasse
+Große Elbstraße
+Große Elbstraße
+
+Grosse Elbstrasse
+...................
+[addbusstop]
+Sandberg
+Sandberg
+Sandberg
+
+Sandberg
+...................
+[addbusstop]
+Fischauktionshalle
+Fischauktionshalle
+Fischauktionshalle
+
+Fischauktionshalle
+...................
+[addbusstop]
+Behnstrasse
+Behnstraße
+Behnstraße
+
+Behnstrasse
+...................
+[addbusstop]
+Pepermoelenbek
+Pepermölenbek
+Pepermölenbek
+
+Pepermoelenbek
+...................
+[addbusstop]
+Bernhard-Nocht-Strasse
+Bernhard-Nocht-Straße
+Bernhard-Nocht-Straße
+
+Bernhard-Nocht-Strasse
+...................
+[addbusstop]
+U S Landungsbruecken
+U S Landungsbrücken
+U S Landungsbrücken
+
+U S Landungsbruecken
+...................
+[addbusstop]
+U Baumwall
+U Baumwall
+U Baumwall
+
+U Baumwall
+...................
+[addbusstop]
+Am Kaiserkai
+Am Kaiserkai
+Am Kaiserkai
+
+Am Kaiserkai
+...................
+[addbusstop]
+Am Sandtorkai
+Am Sandtorkai
+Am Sandtorkai
+
+Am Sandtorkai
+...................
+[addbusstop]
+Magellan-Terrassen
+Magellan-Terrassen
+Magellan-Terrassen
+
+Magellan-Terrassen
+...................
+[addbusstop]
+Marco-Polo-Terrassen
+Marco-Polo-Terrassen
+Marco-Polo-Terrassen
+
+Marco-Polo-Terrassen
+...................
+[addbusstop]
+U Ueberseequartier
+U Überseequartier
+U Überseequartier
+
+U Ueberseequartier
+...................
+[addbusstop]
+Osakaallee
+Osakaallee
+Osakaallee
+
+Osakaallee
+...................
+[addbusstop]
+Shanghaiallee (Ank. 1)
+Shanghaiallee
+Shanghaiallee
+
+Shanghaiallee
+...................
+[addbusstop]
+Shanghaiallee (Ank. 2)
+Shanghaiallee
+Shanghaiallee
+
+Shanghaiallee
+...................
+[addbusstop]
+Shanghaiallee (Abfahrt)
+Shanghaiallee
+Shanghaiallee
+
+Shanghaiallee (Abfahrt)
+...................
+[addbusstop]
+U Feldstrasse (Ankunft)
+U Feldstraße
+U Feldstraße
+
+U Feldstrasse (Ankunft)
+...................
+[addbusstop]
+U Feldstrasse (Abfahrt)
+U Feldstraße
+U Feldstraße
+
+U Feldstrasse (Abfahrt)
+...................
+[addbusstop]
+U Feldstrasse (Pause 1)
+U Feldstraße
+U Feldstraße P1
+
+U Feldstrasse (Pause 1)
+...................
+[addbusstop]
+U Feldstrasse (Pause 2)
+U Feldstraße
+U Feldstraße P2
+
+U Feldstrasse (Pause 2)
+...................
+[addbusstop]
+U Feldstrasse (Pause 3)
+U Feldstraße
+U Feldstraße P3
+
+U Feldstrasse (Pause 3)
+...................
+[addbusstop]
+Paulinenstrasse
+Paulinenstraße
+Paulinenstraße
+
+Paulinenstrasse
+...................
+[addbusstop]
+U St. Pauli
+U St. Pauli
+U St. Pauli
+
+U St. Pauli
+...................
+[addbusstop]
+Michaeliskirche
+Michaeliskirche
+Michaeliskirche
+
+Michaeliskirche
+...................
+[addbusstop]
+Grosser Burstah
+Großer Burstah
+Großer Burstah
+
+Grosser Burstah
+...................
+[addbusstop]
+Auf dem Sande (Pause 1)
+Auf dem Sande
+Auf dem Sande
+
+Auf dem Sande
+...................
+[addbusstop]
+Auf dem Sande (Pause 2)
+Auf dem Sande
+Auf dem Sande
+
+Auf dem Sande
+...................
+[addbusstop]
+Auf dem Sande (Abfahrt)
+Auf dem Sande
+Auf dem Sande
+
+Auf dem Sande (Abfahrt)
+...................
+[addbusstop]
+Singapurstrasse
+Singapurstraße
+Singapurstraße
+
+Singapurstrasse
+...................
+[addbusstop]
+Bei St. Annen
+Bei St. Annen
+Bei St. Annen
+
+Bei St. Annen
+...................
+[addbusstop]
+Brandstwiete
+Brandstwiete
+Brandstwiete
+
+Brandstwiete
+...................
+[addbusstop]
+Brandstwiete (Willy-Brandt-Str.)
+Brandstwiete
+Brandstwiete
+
+Brandstwiete (Willy-Brandt-Str.)
+...................
+[addbusstop]
+Brandstwiete (Pause 1)
+Brandstwiete
+Brandstwiete P1
+
+Brandstwiete (Pause 1)
+...................
+[addbusstop]
+Brandstwiete (Pause 2)
+Brandstwiete
+Brandstwiete P2
+
+Brandstwiete (Pause 2)
+...................
+[addbusstop]
+Brandstwiete (Pause 3)
+Brandstwiete
+Brandstwiete P3
+
+Brandstwiete (Pause 3)
+...................
+[addbusstop]
+Rathausmarkt Petrikirche
+Rathausmarkt Petrikirche
+Rathausmarkt Petrikirche
+
+Rathausmarkt Petrikirche
+...................
+[addbusstop]
+Hauptbahnhof Kirchenallee
+HBF/Kirchenallee
+Hbf. Kirchenallee
+
+Hauptbahnhof Kirchenallee
+...................
+[addbusstop]
+Gurlittstrasse
+Gurlittstraße
+Gurlittstraße
+
+Gurlittstrasse
+...................
+[addbusstop]
+AK St. Georg
+AK St. Georg
+AK St. Georg
+
+AK St. Georg
+...................
+[addbusstop]
+Graumannsweg
+Graumannsweg
+Graumannsweg
+
+Graumannsweg
+...................
+[addbusstop]
+Mundsburger Bruecke
+Mundsburger Brücke
+Mundsburger Brücke
+
+Mundsburger Bruecke
+...................
+[addbusstop]
+Averhoffstrasse
+Averhoffstraße
+Averhoffstraße
+
+Averhoffstrasse
+...................
+[addbusstop]
+Zimmerstrasse
+Zimmerstraße
+Zimmerstraße
+
+Zimmerstrasse
+...................
+[addbusstop]
+Muehlenkamp Hofweg
+Mühlenkamp Hofweg
+Mühlenkamp Hofweg
+
+Muehlenkamp Hofweg
+...................
+[addbusstop]
+Gertigstrasse
+Gertigstraße
+Gertigstraße
+
+Gertigstrasse
+...................
+[addbusstop]
+Goldbekplatz
+Goldbekplatz
+Goldbekplatz
+
+Goldbekplatz
+...................
+[addbusstop]
+Semperstrasse
+Semperstraße
+Semperstraße
+
+Semperstrasse
+...................
+[addbusstop]
+U Borgweg (Ankunft)
+U Borgweg
+U Borgweg
+
+U Borgweg
+...................
+[addbusstop]
+U Borgweg (Abfahrt)
+U Borgweg
+U Borgweg
+
+U Borgweg
+...................
+[addbusstop]
+U Borgweg (Pause 1)
+U Borgweg
+U Borgweg P1
+
+U Borgweg (Pause 1)
+...................
+[addbusstop]
+U Borgweg (Pause 2)
+U Borgweg
+U Borgweg P2
+
+U Borgweg (Pause 2)
+...................
+[addbusstop]
+U Borgweg (Pause 3)
+U Borgweg
+U Borgweg P3
+
+U Borgweg (Pause 3)
+...................
+[addbusstop]
+U Borgweg (Pause 4)
+U Borgweg
+U Borgweg P4
+
+U Borgweg (Pause 4)
+...................
+[addbusstop]
+U Borgweg
+U Borgweg
+U Borgweg
+
+U Borgweg
+...................
+[addbusstop]
+Betriebshof Mesterkamp (Aussetzer)
+Bth. Mesterkamp
+Bth. Mesterkamp
+
+Bth. Mesterkamp
+...................
+[addbusstop]
+Betriebshof Mesterkamp Aussetzer G
+Bth. Mesterkamp
+Bth. Mesterkamp
+
+Bth. Mesterkamp
+...................
+[addbusstop]
+Betriebshof Mesterkamp Aussetzer S
+Bth. Mesterkamp
+Bth. Mesterkamp
+
+Bth. Mesterkamp
+...................
+[addbusstop]
+Betriebshof Mesterkamp Einsetzer
+Bth. Mesterkamp
+Bth. Mesterkamp
+
+Bth. Mesterkamp
+...................
+[addbusstop]
+Betriebshof Mesterkamp
+Bth. Mesterkamp
+Bth. Mesterkamp
+
+Bth. Mesterkamp
+...................
+[addbusstop]
+U Borgweg (Einsetzer)
+U Borgweg
+U Borgweg
+
+U Borgweg
+...................
+[addbusstop]
+Bf. Altona (Einsetzer)
+Bf. Altona
+Bf. Altona
+
+Bf. Altona
+...................
+[addbusstop]
+Shanghaiallee (Einsetzer)
+Shanghaiallee
+Shanghaiallee
+
+Shanghaiallee
+...................
+[addbusstop]
+Auf dem Sande (Einsetzer)
+Auf dem Sande
+Auf dem Sande
+
+Auf dem Sande
+...................
+[addbusstop]
+Brandstwiete (Einsetzer)
+Brandstwiete
+Brandstwiete
+
+Brandstwiete
+...................
+[addbusstop]
+Goldbekplatz (Einsetzer)
+Goldbekplatz
+Goldbekplatz
+
+Goldbekplatz
+...................
+[addbusstop]
+Gerhart-Hauptmann-Platz (Einsetzer)
+Gerhart-Hauptmann-Platz
+Gerhart-Hauptmann-Platz
+
+Gerhart-Hauptmann-Platz
+...................
+[addbusstop]
+U Feldstrasse (Einsetzer)
+U Feldstraße
+U Feldstraße
+
+U Feldstraße
+...................
+[addbusstop]
+Böttgerstraße
+Böttgerstraße
+Böttgerstraße
+
+Boettgerstrasse
+...................
 
 [infosystem_trip]
 10901
 UAL-ZAL
-27
-109
+33
+582
 
 [infosystem_busstop_list]
 24
@@ -354,7 +1965,7 @@ Hauptbahnhof ZOB
 10902
 ZAL-UAL
 582
-109
+33
 
 [infosystem_busstop_list]
 24
@@ -387,7 +1998,7 @@ U Alsterdorf (Ankunft)
 10903
 UAL-RAM
 5
-109
+582
 
 [infosystem_busstop_list]
 21
@@ -417,7 +2028,7 @@ Rathausmarkt (Terminus 109)
 10904
 RAM-UAL
 582
-109
+5
 
 [infosystem_busstop_list]
 21
@@ -447,7 +2058,7 @@ U Alsterdorf (Ankunft)
 10905
 WIM-RAM
 5
-109
+423
 
 [infosystem_busstop_list]
 14
@@ -470,7 +2081,7 @@ Rathausmarkt (Terminus 109)
 10906
 ZAL-WIM
 423
-109
+33
 
 [infosystem_busstop_list]
 18
@@ -497,7 +2108,7 @@ Winterhude Markt
 10907
 WIM-UAL
 582
-109
+423
 
 [infosystem_busstop_list]
 7
@@ -513,7 +2124,7 @@ U Alsterdorf (Ankunft)
 10908
 ZAL-MAC
 644
-109
+33
 
 [infosystem_busstop_list]
 12
@@ -533,8 +2144,8 @@ Alsterchaussee
 [infosystem_trip]
 10909
 MAC-ZAL
-27
-109
+33
+644
 
 [infosystem_busstop_list]
 12
@@ -555,7 +2166,7 @@ Hauptbahnhof ZOB
 10910
 RAM-MAC
 644
-109
+5
 
 [infosystem_busstop_list]
 8
@@ -572,7 +2183,7 @@ Alsterchaussee
 10911
 MAC-RAM
 5
-109
+644
 
 [infosystem_busstop_list]
 9
@@ -590,12 +2201,13 @@ Rathausmarkt (Terminus 109)
 68801
 RAM-ATH
 14
-688
+5
 
 [infosystem_busstop_list]
-14
+15
 Rathausmarkt (Terminus 688)
-U S Jungfernstieg (Nachtbus)
+Rathausmarkt (Nachtbus)
+U S Jungfernstieg
 U Gaensemarkt
 Dragonerstall
 Johannes-Brahms-Platz
@@ -613,7 +2225,7 @@ Bf. Altona (Ankunft)
 68802
 ATH-RAM
 5
-688
+14
 
 [infosystem_busstop_list]
 15
@@ -634,10 +2246,10 @@ U S Jungfernstieg
 Rathausmarkt (Terminus 688)
 
 [infosystem_trip]
-601
+00601
 BOW-FEB
 245
-6
+594
 
 [infosystem_busstop_list]
 21
@@ -664,10 +2276,10 @@ Paulinenstrasse
 U Feldstrasse (Ankunft)
 
 [infosystem_trip]
-602
+00602
 FEB-BOW
 594
-6
+245
 
 [infosystem_busstop_list]
 20
@@ -693,10 +2305,10 @@ Semperstrasse
 U Borgweg (Ankunft)
 
 [infosystem_trip]
-603
+00603
 BOW-ASA
 239
-6
+594
 
 [infosystem_busstop_list]
 20
@@ -722,10 +2334,10 @@ Singapurstrasse
 Auf dem Sande (Pause 1)
 
 [infosystem_trip]
-604
+00604
 ASA-BOW
 594
-6
+239
 
 [infosystem_busstop_list]
 20
@@ -751,10 +2363,10 @@ Semperstrasse
 U Borgweg (Ankunft)
 
 [infosystem_trip]
-605
+00605
 BOW-GHP
 247
-6
+594
 
 [infosystem_busstop_list]
 15
@@ -775,10 +2387,10 @@ Hauptbahnhof Moenckebergstrasse
 Gerhart-Hauptmann-Platz
 
 [infosystem_trip]
-606
+00606
 GHP-BOW
 594
-6
+247
 
 [infosystem_busstop_list]
 14
@@ -798,13 +2410,13 @@ Semperstrasse
 U Borgweg (Ankunft)
 
 [infosystem_trip]
-607
+00607
 BOW-BRT
 240
-6
+594
 
 [infosystem_busstop_list]
-17
+15
 U Borgweg (Pause 1)
 U Borgweg (Abfahrt)
 Semperstrasse
@@ -822,12 +2434,13 @@ Hauptbahnhof Moenckebergstrasse
 Gerhart-Hauptmann-Platz
 Rathausmarkt Petrikirche
 Brandstwiete (Willy-Brandt-Str.)
+Brandstwiete (Pause 1)
 
 [infosystem_trip]
-608
+00608
 BRT-BOW
 594
-6
+240
 
 [infosystem_busstop_list]
 16
@@ -849,10 +2462,10 @@ Semperstrasse
 U Borgweg (Ankunft)
 
 [infosystem_trip]
-609
+00609
 BRT-GOP
 246
-6
+240
 
 [infosystem_busstop_list]
 14
@@ -872,10 +2485,10 @@ Gertigstrasse
 Goldbekplatz
 
 [infosystem_trip]
-610
+00610
 GHP-GOP
 246
-6
+247
 
 [infosystem_busstop_list]
 12
@@ -896,7 +2509,7 @@ Goldbekplatz
 11101
 SHA-ATH
 14
-111
+236
 
 [infosystem_busstop_list]
 21
@@ -926,7 +2539,7 @@ Bf. Altona (Ankunft)
 11102
 ATH-SHA
 236
-111
+14
 
 [infosystem_busstop_list]
 22
@@ -957,7 +2570,7 @@ Shanghaiallee (Ank. 1)
 11103
 SHA-ATH
 14
-111
+236
 
 [infosystem_busstop_list]
 15
@@ -981,10 +2594,10 @@ Bf. Altona (Ankunft)
 11104
 ATH-SHA
 236
-111
+14
 
 [infosystem_busstop_list]
-17
+16
 Bf. Altona (Pause L3)
 Bf. Altona (Abfahrt)
 Rathaus Altona
@@ -1002,1248 +2615,3 @@ Marco-Polo-Terrassen
 U Ueberseequartier
 Osakaallee
 Shanghaiallee (Ank. 1)
-
-[infosystem_trip]
-1701
-BOW-FEB
-248
-17
-
-[infosystem_busstop_list]
-22
-U Borgweg (Pause 2)
-U Borgweg (Abfahrt)
-Semperstrasse
-Goldbekplatz
-Gertigstrasse
-Muehlenkamp Hofweg
-Zimmerstrasse
-Averhoffstrasse
-Mundsburger Bruecke
-Graumannsweg
-AK St. Georg
-Gurlittstrasse
-Hauptbahnhof Kirchenallee
-Hauptbahnhof Moenckebergstrasse
-Gerhart-Hauptmann-Platz
-Rathausmarkt
-Grosser Burstah
-Michaeliskirche
-U St. Pauli
-Paulinenstrasse
-U Feldstrasse (Abfahrt)
-U Feldstrasse (Pause 2)
-
-[infosystem_trip]
-1702
-FEB-BOW
-593
-17
-
-[infosystem_busstop_list]
-22
-U Feldstrasse (Pause 2)
-U Feldstrasse (Abfahrt)
-Paulinenstrasse
-U St. Pauli
-Michaeliskirche
-Grosser Burstah
-Rathausmarkt
-Gerhart-Hauptmann-Platz
-Hauptbahnhof Moenckebergstrasse
-Hauptbahnhof Kirchenallee
-Gurlittstrasse
-AK St. Georg
-Graumannsweg
-Mundsburger Bruecke
-Averhoffstrasse
-Zimmerstrasse
-Muehlenkamp Hofweg
-Gertigstrasse
-Goldbekplatz
-Semperstrasse
-U Borgweg (Ankunft)
-U Borgweg (Pause 2)
-
-[infosystem_trip]
-3601
-ATH-ZOB
-225
-36
-
-[infosystem_busstop_list]
-14
-Bf. Altona (Pause L1)
-Bf. Altona (Abfahrt)
-S Reeperbahn
-Davidstrasse
-U St. Pauli
-Johannes-Brahms-Platz
-U Stephansplatz
-U Gaensemarkt
-U S Jungfernstieg
-Rathausmarkt
-Gerhart-Hauptmann-Platz
-Hauptbahnhof Moenckebergstrasse
-Hauptbahnhof ZOB
-Überliegeplatz Adenauerallee (Pause Mitte)
-
-[infosystem_trip]
-3602
-ZOB-ATH
-158
-36
-
-[infosystem_busstop_list]
-13
-Überliegeplatz Adenauerallee (Pause Mitte)
-Hauptbahnhof ZOB
-Hauptbahnhof Moenckebergstrasse
-Gerhart-Hauptmann-Platz
-Rathausmarkt
-U S Jungfernstieg
-U Gaensemarkt
-U Stephansplatz
-Johannes-Brahms-Platz
-U St. Pauli
-Davidstrasse
-S Reeperbahn
-Bf. Altona (Ankunft)
-
-[infosystem_trip]
-3701
-ATH-UAL
-179
-37
-
-[infosystem_busstop_list]
-18
-Bf. Altona (Pause L1)
-Bf. Altona (vorn)
-Grosse Bergstrasse
-S Reeperbahn
-Davidstrasse
-U St. Pauli
-Michaeliskirche
-Grosser Burstah
-Rathausmarkt
-Gerhart-Hauptmann-Platz
-Hauptbahnhof Moenckebergstrasse
-Hauptbahnhof Kirchenallee
-AK St. Georg
-Mundsburger Bruecke
-Muehlenkamp Hofweg
-Goldbekplatz
-U Borgweg (179)
-U Alsterdorf (Ankunft vorn)
-
-[infosystem_trip]
-3702
-UAL-ATH
-484
-37
-
-[infosystem_busstop_list]
-18
-U Alsterdorf (Ankunft vorn)
-U Alsterdorf (Abfahrt)
-U Borgweg (Abfahrt)
-Goldbekplatz
-Muehlenkamp Hofweg
-Mundsburger Bruecke
-AK St. Georg
-Hauptbahnhof Kirchenallee
-Hauptbahnhof Moenckebergstrasse
-Gerhart-Hauptmann-Platz
-Rathausmarkt
-Grosser Burstah
-Michaeliskirche
-U St. Pauli
-Davidstrasse
-S Reeperbahn
-Grosse Bergstrasse
-Bf. Altona (B)
-
-[infosystem_trip]
-3703
-ATH-ZOB
-725
-37
-
-[infosystem_busstop_list]
-13
-Bf. Altona (Pause L1)
-Bf. Altona (vorn)
-Grosse Bergstrasse
-S Reeperbahn
-Davidstrasse
-U St. Pauli
-Michaeliskirche
-Grosser Burstah
-Rathausmarkt
-Gerhart-Hauptmann-Platz
-Hauptbahnhof Moenckebergstrasse
-Hauptbahnhof ZOB
-Überliegeplatz Adenauerallee (Pause Mitte)
-
-[infosystem_trip]
-3704
-ZOB-ATH
-724
-37
-
-[infosystem_busstop_list]
-12
-Überliegeplatz Adenauerallee (Pause Mitte)
-Hauptbahnhof ZOB
-Hauptbahnhof Moenckebergstrasse
-Gerhart-Hauptmann-Platz
-Rathausmarkt
-Grosser Burstah
-Michaeliskirche
-U St. Pauli
-Davidstrasse
-S Reeperbahn
-Grosse Bergstrasse
-Bf. Altona (B)
-
-[infosystem_trip]
-3901
-BOW-BRT
-180
-39
-
-[infosystem_busstop_list]
-13
-U Borgweg
-U Borgweg (179)
-U Alsterdorf
-Braamkamp
-Winterhude Markt
-U Sierichstrasse
-Streekbruecke
-Alsterchaussee
-Fontenay
-Bf. Dammtor
-U S Jungfernstieg
-Rathausmarkt Petrikirche
-Brandstwiete (Willy-Brandt-Str.)
-
-[infosystem_trip]
-3902
-BTR-BOW
-181
-39
-
-[infosystem_busstop_list]
-15
-Brandstwiete (Pause 3)
-Brandstwiete
-Rathausmarkt Petrikirche
-U S Jungfernstieg
-U Stephansplatz
-Bf. Dammtor
-Fontenay
-Alsterchaussee
-Streekbruecke
-U Sierichstrasse
-Winterhude Markt
-Braamkamp
-U Alsterdorf
-U Borgweg (179 Ankunft)
-U Borgweg
-
-[infosystem_trip]
-10001
-HH Stadtrundfahrt
-100
-100
-
-[infosystem_busstop_list]
-11
-SR Kirchenallee
-Fontenay
-SR Rathausmarkt
-SR Michaeliskirche
-Davidstrasse
-Kreuzfahrtterminal Altona
-Fischauktionshalle
-SR U S Landungsbruecken
-Marco-Polo-Terrassen
-Auf dem Sande (Abfahrt)
-SR Kirchenallee
-
-[infosystem_trip]
-10601
-UAL-BOW
-593
-106
-
-[infosystem_busstop_list]
-36
-U Alsterdorf (Ankunft)
-U Alsterdorf (Abfahrt)
-Hindenburgstrasse
-Carl-Cohn-Strasse
-Wilhelm-Metzger-Strasse
-Braamkamp
-Lattenkampstieg
-Winterhude Markt
-U Sierichstrasse
-Maria-Louisen-Strasse
-Streekbruecke
-Harvestehuder Weg
-Sophienterrasse
-Alsterchaussee
-Boettgerstrasse
-Fontenay
-Bf. Dammtor
-U Stephansplatz
-U Gaensemarkt
-U S Jungfernstieg
-Rathausmarkt
-Gerhart-Hauptmann-Platz
-Hauptbahnhof Moenckebergstrasse
-Hauptbahnhof Kirchenallee
-Gurlittstrasse
-AK St. Georg
-Graumannsweg
-Mundsburger Bruecke
-Averhoffstrasse
-Zimmerstrasse
-Muehlenkamp Hofweg
-Gertigstrasse
-Goldbekplatz
-Semperstrasse
-U Borgweg (Ankunft)
-U Borgweg (Pause 1)
-
-[infosystem_trip]
-10602
-BOW-UAL
-583
-106
-
-[infosystem_busstop_list]
-35
-U Borgweg (Pause 1)
-U Borgweg (Abfahrt)
-Semperstrasse
-Goldbekplatz
-Gertigstrasse
-Muehlenkamp Hofweg
-Zimmerstrasse
-Averhoffstrasse
-Mundsburger Bruecke
-Graumannsweg
-AK St. Georg
-Gurlittstrasse
-Hauptbahnhof Kirchenallee
-Hauptbahnhof Moenckebergstrasse
-Gerhart-Hauptmann-Platz
-Rathausmarkt
-U S Jungfernstieg
-U Gaensemarkt
-U Stephansplatz
-Bf. Dammtor
-Fontenay
-Boettgerstrasse
-Alsterchaussee
-Sophienterrasse
-Harvestehuder Weg
-Streekbruecke
-Maria-Louisen-Strasse
-U Sierichstrasse
-Winterhude Markt
-Lattenkampstieg
-Braamkamp
-Wilhelm-Metzger-Strasse
-Carl-Cohn-Strasse
-Hindenburgstrasse
-U Alsterdorf (Ankunft)
-
-[infosystem_trip]
-10603
-BOW-ZOB
-27
-106
-
-[infosystem_busstop_list]
-15
-U Borgweg (Pause 1)
-U Borgweg (Abfahrt)
-Semperstrasse
-Goldbekplatz
-Gertigstrasse
-Muehlenkamp Hofweg
-Zimmerstrasse
-Averhoffstrasse
-Mundsburger Bruecke
-Graumannsweg
-AK St. Georg
-Gurlittstrasse
-SR Kirchenallee
-Hauptbahnhof ZOB
-Überliegeplatz Adenauerallee
-
-[infosystem_trip]
-10604
-ZOB-BOW
-593
-106
-
-[infosystem_busstop_list]
-14
-Überliegeplatz Adenauerallee
-Hauptbahnhof Kirchenallee
-Gurlittstrasse
-AK St. Georg
-Graumannsweg
-Mundsburger Bruecke
-Averhoffstrasse
-Zimmerstrasse
-Muehlenkamp Hofweg
-Gertigstrasse
-Goldbekplatz
-Semperstrasse
-U Borgweg (Ankunft)
-U Borgweg (Pause 1)
-
-[infosystem_trip]
-10606
-UAL-BOW Ankunft
-593
-106
-
-[infosystem_busstop_list]
-35
-U Alsterdorf (Ankunft)
-U Alsterdorf (Abfahrt)
-Hindenburgstrasse
-Carl-Cohn-Strasse
-Wilhelm-Metzger-Strasse
-Braamkamp
-Lattenkampstieg
-Winterhude Markt
-U Sierichstrasse
-Maria-Louisen-Strasse
-Streekbruecke
-Harvestehuder Weg
-Sophienterrasse
-Alsterchaussee
-Boettgerstrasse
-Fontenay
-Bf. Dammtor
-U Stephansplatz
-U Gaensemarkt
-U S Jungfernstieg
-Rathausmarkt
-Gerhart-Hauptmann-Platz
-Hauptbahnhof Moenckebergstrasse
-Hauptbahnhof Kirchenallee
-Gurlittstrasse
-AK St. Georg
-Graumannsweg
-Mundsburger Bruecke
-Averhoffstrasse
-Zimmerstrasse
-Muehlenkamp Hofweg
-Gertigstrasse
-Goldbekplatz
-Semperstrasse
-U Borgweg (Ankunft)
-
-[infosystem_trip]
-11201
-ATH-ZOB
-38
-112
-
-[infosystem_busstop_list]
-16
-Bf. Altona (Pause H)
-Bf. Altona Abfahrt 20-25
-Altonaer Poststrasse
-Grosse Bergstrasse
-Bluecherstrasse
-S Reeperbahn
-Davidstrasse
-U St. Pauli
-Museum für Hamburg. Geschichte
-Handwerkskammer
-Johannes-Brahms-Platz
-U Stephansplatz
-Ferdinandstor
-Hauptbahnhof Spitaler Straße
-Hauptbahnhof ZOB
-Überliegeplatz Adenauerallee (Pause vorn)
-
-[infosystem_trip]
-11202
-ZOB-ATH
-46
-112
-
-[infosystem_busstop_list]
-15
-Überliegeplatz Adenauerallee (Pause vorn)
-Hauptbahnhof ZOB
-Hauptbahnhof Spitaler Straße
-Ferdinandstor
-U Stephansplatz
-Johannes-Brahms-Platz
-Handwerkskammer
-Museum für Hamburg. Geschichte
-U St. Pauli
-Davidstrasse
-S Reeperbahn
-Bluecherstrasse
-Grosse Bergstrasse
-Altonaer Poststrasse
-Bf. Altona (Ankunft)
-
-[infosystem_trip]
-11901
-MAC-SHA
-236
-119
-
-[infosystem_busstop_list]
-38
-Alsterchaussee
-Boettgerstrasse
-Fontenay
-Bf. Dammtor
-Ferdinandstor
-Hauptbahnhof Spitaler Straße
-Hauptbahnhof Moenckebergstrasse
-Gerhart-Hauptmann-Platz
-Rathausmarkt
-U S Jungfernstieg
-U Gaensemarkt
-U Stephansplatz
-Johannes-Brahms-Platz
-Handwerkskammer
-Museum für Hamburg. Geschichte
-Kleine Seilerstrasse
-Hein-Hoyer-Strasse
-Grosse Freiheit
-Kleine Marienstrasse
-Grosse Bergstrasse
-Altonaer Poststrasse
-Bf. Altona (Ankunft)
-Bf. Altona (Abfahrt)
-Rathaus Altona
-Behnstrasse
-Pepermoelenbek
-S Reeperbahn
-Davidstrasse
-Bernhard-Nocht-Strasse
-U S Landungsbruecken
-U Baumwall
-Am Kaiserkai
-Am Sandtorkai
-Magellan-Terrassen
-Marco-Polo-Terrassen
-U Ueberseequartier
-Osakaallee
-Shanghaiallee (Ank. 1)
-
-[infosystem_trip]
-11902
-SHA-MAC
-644
-119
-
-[infosystem_busstop_list]
-36
-Shanghaiallee (Abfahrt)
-U Ueberseequartier
-Marco-Polo-Terrassen
-Magellan-Terrassen
-Am Sandtorkai
-Am Kaiserkai
-U Baumwall
-U S Landungsbruecken
-Bernhard-Nocht-Strasse
-Davidstrasse
-S Reeperbahn
-Pepermoelenbek
-Rathaus Altona
-Bf. Altona (Ankunft)
-Bf. Altona (Abfahrt)
-Altonaer Poststrasse
-Moerkenstrasse
-Bluecherstrasse
-S Reeperbahn
-Davidstrasse
-U St. Pauli
-Museum für Hamburg. Geschichte
-Handwerkskammer
-Johannes-Brahms-Platz
-U Stephansplatz
-U Gaensemarkt
-U S Jungfernstieg
-Rathausmarkt
-Gerhart-Hauptmann-Platz
-Hauptbahnhof Moenckebergstrasse
-Hauptbahnhof Kirchenallee
-Ferdinandstor
-Bf. Dammtor
-Fontenay
-Boettgerstrasse
-Alsterchaussee
-
-[infosystem_trip]
-11904
-MAC-SHA Nacht
-236
-119
-
-[infosystem_busstop_list]
-40
-Alsterchaussee
-Boettgerstrasse
-Fontenay
-Bf. Dammtor
-Ferdinandstor
-Hauptbahnhof Spitaler Straße
-Hauptbahnhof Moenckebergstrasse
-Gerhart-Hauptmann-Platz
-Rathausmarkt
-U S Jungfernstieg (Nachtbus)
-U Gaensemarkt
-Dragonerstall
-Johannes-Brahms-Platz
-Handwerkskammer
-Museum für Hamburg. Geschichte
-Kleine Seilerstrasse
-Hein-Hoyer-Strasse
-Grosse Freiheit
-Kleine Marienstrasse
-Grosse Bergstrasse
-Altonaer Poststrasse
-Bf. Altona (Ankunft)
-Bf. Altona (Abfahrt)
-Rathaus Altona
-Elbberg
-Neumuehler Kirchenweg
-Kreuzfahrtterminal Altona
-Grosse Elbstrasse
-Sandberg
-Fischauktionshalle
-Pepermoelenbek
-S Reeperbahn
-Davidstrasse
-Bernhard-Nocht-Strasse
-U S Landungsbruecken
-U Baumwall
-Am Kaiserkai
-Am Sandtorkai
-Singapurstrasse
-Shanghaiallee (Ank. 1)
-
-[infosystem_trip]
-11905
-SHA-MAC Nacht
-644
-119
-
-[infosystem_busstop_list]
-41
-Shanghaiallee (Abfahrt)
-Osakaallee
-Singapurstrasse
-Auf dem Sande (Abfahrt)
-Am Kaiserkai
-U Baumwall
-U S Landungsbruecken
-Bernhard-Nocht-Strasse
-Davidstrasse
-S Reeperbahn
-Pepermoelenbek
-Fischauktionshalle
-Sandberg
-Grosse Elbstrasse
-Kreuzfahrtterminal Altona
-Neumuehler Kirchenweg
-Elbberg
-Rathaus Altona
-Bf. Altona (Ankunft)
-Bf. Altona (Abfahrt)
-Altonaer Poststrasse
-Moerkenstrasse
-Bluecherstrasse
-S Reeperbahn
-Davidstrasse
-U St. Pauli
-Museum für Hamburg. Geschichte
-Handwerkskammer
-Johannes-Brahms-Platz
-Dragonerstall
-U Gaensemarkt
-U S Jungfernstieg (Nachtbus)
-Rathausmarkt
-Gerhart-Hauptmann-Platz
-Hauptbahnhof Moenckebergstrasse
-Hauptbahnhof Kirchenallee
-Ferdinandstor
-Bf. Dammtor
-Fontenay
-Boettgerstrasse
-Alsterchaussee
-
-[infosystem_trip]
-11907
-MAC-SHA SO-Nacht
-236
-119
-
-[infosystem_busstop_list]
-35
-Alsterchaussee
-Boettgerstrasse
-Fontenay
-Bf. Dammtor
-Ferdinandstor
-Hauptbahnhof Spitaler Straße
-Hauptbahnhof Moenckebergstrasse
-Gerhart-Hauptmann-Platz
-Rathausmarkt
-U S Jungfernstieg (Nachtbus)
-U Gaensemarkt
-Dragonerstall
-Johannes-Brahms-Platz
-Handwerkskammer
-Museum für Hamburg. Geschichte
-Kleine Seilerstrasse
-Hein-Hoyer-Strasse
-Grosse Freiheit
-Kleine Marienstrasse
-Grosse Bergstrasse
-Altonaer Poststrasse
-Bf. Altona (Ankunft)
-Bf. Altona (Abfahrt)
-Rathaus Altona
-Behnstrasse
-Pepermoelenbek
-S Reeperbahn
-Davidstrasse
-Bernhard-Nocht-Strasse
-U S Landungsbruecken
-U Baumwall
-Am Kaiserkai
-Am Sandtorkai
-Singapurstrasse
-Shanghaiallee (Ank. 1)
-
-[infosystem_trip]
-11908
-SHA-MAC SO-Nacht
-644
-119
-
-[infosystem_busstop_list]
-35
-Shanghaiallee (Abfahrt)
-Osakaallee
-Singapurstrasse
-Auf dem Sande (Abfahrt)
-Am Kaiserkai
-U Baumwall
-U S Landungsbruecken
-Bernhard-Nocht-Strasse
-Davidstrasse
-S Reeperbahn
-Pepermoelenbek
-Rathaus Altona
-Bf. Altona (Ankunft)
-Bf. Altona (Abfahrt)
-Altonaer Poststrasse
-Moerkenstrasse
-Bluecherstrasse
-S Reeperbahn
-Davidstrasse
-U St. Pauli
-Museum für Hamburg. Geschichte
-Handwerkskammer
-Johannes-Brahms-Platz
-Dragonerstall
-U Gaensemarkt
-U S Jungfernstieg (Nachtbus)
-Rathausmarkt
-Gerhart-Hauptmann-Platz
-Hauptbahnhof Moenckebergstrasse
-Hauptbahnhof Kirchenallee
-Ferdinandstor
-Bf. Dammtor
-Fontenay
-Boettgerstrasse
-Alsterchaussee
-
-[infosystem_trip]
-18801
-ATH-BRT
-249
-188
-
-[infosystem_busstop_list]
-17
-Bf. Altona (Pause L4)
-Bf. Altona (Abfahrt)
-Altonaer Poststrasse
-Moerkenstrasse
-Bluecherstrasse
-S Reeperbahn
-Davidstrasse
-U St. Pauli
-Museum für Hamburg. Geschichte
-Handwerkskammer
-Johannes-Brahms-Platz
-Dragonerstall
-U Gaensemarkt
-U S Jungfernstieg
-Rathausmarkt
-Rathausmarkt Petrikirche
-Brandstwiete (Willy-Brandt-Str.)
-
-[infosystem_trip]
-18802
-BRT-ATH
-14
-188
-
-[infosystem_busstop_list]
-17
-Brandstwiete (Pause 2)
-Brandstwiete
-Rathausmarkt Petrikirche
-Rathausmarkt
-U S Jungfernstieg
-U Gaensemarkt
-Dragonerstall
-Johannes-Brahms-Platz
-Handwerkskammer
-Museum für Hamburg. Geschichte
-Kleine Seilerstrasse
-Hein-Hoyer-Strasse
-Grosse Freiheit
-Kleine Marienstrasse
-Grosse Bergstrasse
-Altonaer Poststrasse
-Bf. Altona (Ankunft)
-
-[infosystem_trip]
-28801
-ATH-ATH
-14
-288
-
-[infosystem_busstop_list]
-10
-Bf. Altona (Pause L4)
-Bf. Altona (vorn)
-Rathaus Altona
-Behnstrasse
-Pepermoelenbek
-S Reeperbahn 283
-Kleine Marienstrasse
-Grosse Bergstrasse
-Altonaer Poststrasse
-Bf. Altona (Ankunft)
-
-[infosystem_trip]
-60101
-RAM-ATH
-639
-601
-
-[infosystem_busstop_list]
-11
-Rathausmarkt (Ri. UAL, nur Ausstieg)
-Rathausmarkt
-Grosser Burstah
-Michaeliskirche
-Kleine Seilerstrasse
-Hein-Hoyer-Strasse
-Grosse Freiheit
-Kleine Marienstrasse
-Grosse Bergstrasse
-Altonaer Poststrasse
-Bf. Altona (Ankunft)
-
-[infosystem_trip]
-60102
-ATH-RAM
-5
-601
-
-[infosystem_busstop_list]
-11
-Bf. Altona (Pause L2)
-Bf. Altona Abfahrt 20-25
-Altonaer Poststrasse
-Moerkenstrasse
-Bluecherstrasse
-S Reeperbahn
-Davidstrasse
-U St. Pauli
-Michaeliskirche
-Grosser Burstah
-Rathausmarkt (Ri. UAL, nur Ausstieg)
-
-[infosystem_trip]
-60201
-FEB-SHA
-238
-602
-
-[infosystem_busstop_list]
-22
-U Feldstrasse (Pause 2)
-U Feldstrasse (Abfahrt)
-Paulinenstrasse
-U St. Pauli
-Museum für Hamburg. Geschichte
-Handwerkskammer
-Johannes-Brahms-Platz
-Dragonerstall
-U Gaensemarkt
-U S Jungfernstieg (Nachtbus)
-Rathausmarkt
-Rathausmarkt Petrikirche
-Brandstwiete
-Bei St. Annen
-Singapurstrasse
-Auf dem Sande (Abfahrt)
-Am Sandtorkai
-Magellan-Terrassen
-Marco-Polo-Terrassen
-U Ueberseequartier
-Osakaallee
-Shanghaiallee (Ank. 1)
-
-[infosystem_trip]
-60202
-SHA-FEB
-355
-602
-
-[infosystem_busstop_list]
-20
-Shanghaiallee (Ank. 1)
-Shanghaiallee (Abfahrt)
-U Ueberseequartier
-Marco-Polo-Terrassen
-Magellan-Terrassen
-Singapurstrasse
-Bei St. Annen
-Brandstwiete
-Rathausmarkt Petrikirche
-Rathausmarkt
-U S Jungfernstieg (Nachtbus)
-U Gaensemarkt
-Dragonerstall
-Johannes-Brahms-Platz
-Handwerkskammer
-Museum für Hamburg. Geschichte
-U St. Pauli
-Paulinenstrasse
-U Feldstrasse (Ankunft)
-U Feldstrasse (Pause 2)
-
-[infosystem_trip]
-60203
-FEB-RAM
-5
-602
-
-[infosystem_busstop_list]
-11
-U Feldstrasse (Pause 2)
-U Feldstrasse (Abfahrt)
-Paulinenstrasse
-U St. Pauli
-Museum für Hamburg. Geschichte
-Handwerkskammer
-Johannes-Brahms-Platz
-Dragonerstall
-U Gaensemarkt
-U S Jungfernstieg (Nachtbus)
-Rathausmarkt (Terminus 688)
-
-[infosystem_trip]
-60204
-RAM-FEB
-355
-602
-
-[infosystem_busstop_list]
-10
-Rathausmarkt (Terminus 688)
-Rathausmarkt
-U S Jungfernstieg (Nachtbus)
-U Gaensemarkt
-Johannes-Brahms-Platz
-Handwerkskammer
-Museum für Hamburg. Geschichte
-U St. Pauli
-Paulinenstrasse
-U Feldstrasse (Ankunft)
-
-[infosystem_trip]
-60501
-MAC-ZAL
-27
-605
-
-[infosystem_busstop_list]
-13
-Alsterchaussee
-Alsterchaussee
-Boettgerstrasse
-Fontenay
-Bf. Dammtor
-U Stephansplatz
-U Gaensemarkt
-U S Jungfernstieg (Nachtbus)
-Rathausmarkt
-Gerhart-Hauptmann-Platz
-Hauptbahnhof Moenckebergstrasse
-Hauptbahnhof ZOB
-Überliegeplatz Adenauerallee (Pause Mitte)
-
-[infosystem_trip]
-60502
-ZAL-MAC
-241
-605
-
-[infosystem_busstop_list]
-13
-Überliegeplatz Adenauerallee (Pause Mitte)
-Hauptbahnhof ZOB
-Hauptbahnhof Moenckebergstrasse
-Gerhart-Hauptmann-Platz
-Rathausmarkt
-U S Jungfernstieg (Nachtbus)
-U Gaensemarkt
-U Stephansplatz
-Bf. Dammtor
-Fontenay
-Boettgerstrasse
-Alsterchaussee
-Alsterchaussee
-
-[infosystem_trip]
-60701
-UAL-SRE
-223
-607
-
-[infosystem_busstop_list]
-27
-U Alsterdorf (Ankunft)
-U Alsterdorf (Abfahrt)
-U Borgweg
-Semperstrasse
-Goldbekplatz
-Gertigstrasse
-Muehlenkamp Hofweg
-Zimmerstrasse
-Averhoffstrasse
-Mundsburger Bruecke
-Graumannsweg
-AK St. Georg
-Gurlittstrasse
-Hauptbahnhof Kirchenallee
-Hauptbahnhof Moenckebergstrasse
-Gerhart-Hauptmann-Platz
-Rathausmarkt
-U S Jungfernstieg (Nachtbus)
-U Gaensemarkt
-U Stephansplatz
-Johannes-Brahms-Platz
-Handwerkskammer
-Museum für Hamburg. Geschichte
-Kleine Seilerstrasse
-Hein-Hoyer-Strasse
-Grosse Freiheit
-S Reeperbahn
-
-[infosystem_trip]
-60702
-SRE-UAL
-295
-607
-
-[infosystem_busstop_list]
-26
-S Reeperbahn
-Davidstrasse
-U St. Pauli
-Museum für Hamburg. Geschichte
-Handwerkskammer
-Johannes-Brahms-Platz
-U Stephansplatz
-U Gaensemarkt
-U S Jungfernstieg (Nachtbus)
-Rathausmarkt
-Gerhart-Hauptmann-Platz
-Hauptbahnhof Moenckebergstrasse
-Hauptbahnhof Kirchenallee
-Gurlittstrasse
-AK St. Georg
-Graumannsweg
-Mundsburger Bruecke
-Averhoffstrasse
-Zimmerstrasse
-Muehlenkamp Hofweg
-Gertigstrasse
-Goldbekplatz
-Semperstrasse
-U Borgweg
-U Alsterdorf
-U Alsterdorf (Ankunft)
-
-[infosystem_trip]
-60901
-ATH-ZOB
-622
-609
-
-[infosystem_busstop_list]
-15
-Bf. Altona (Pause H)
-Bf. Altona Abfahrt 20-25
-Altonaer Poststrasse
-Moerkenstrasse
-Bluecherstrasse
-S Reeperbahn
-Davidstrasse
-U St. Pauli
-Michaeliskirche
-Grosser Burstah
-Rathausmarkt
-Gerhart-Hauptmann-Platz
-Hauptbahnhof Moenckebergstrasse
-Hauptbahnhof ZOB
-Überliegeplatz Adenauerallee (Pause Mitte)
-
-[infosystem_trip]
-60902
-ZOB-ATH
-724
-609
-
-[infosystem_busstop_list]
-14
-Überliegeplatz Adenauerallee (Pause Mitte)
-Hauptbahnhof ZOB
-Hauptbahnhof Moenckebergstrasse
-Gerhart-Hauptmann-Platz
-Rathausmarkt
-Grosser Burstah
-Michaeliskirche
-Kleine Seilerstrasse
-Hein-Hoyer-Strasse
-Grosse Freiheit
-Kleine Marienstrasse
-Grosse Bergstrasse
-Altonaer Poststrasse
-Bf. Altona (Ankunft)
-
-[infosystem_trip]
-61201
-UAL-MAC
-644
-612
-
-[infosystem_busstop_list]
-14
-U Alsterdorf (Ankunft)
-U Alsterdorf
-Hindenburgstrasse
-Carl-Cohn-Strasse
-Wilhelm-Metzger-Strasse
-Braamkamp
-Lattenkampstieg
-Winterhude Markt
-U Sierichstrasse
-Maria-Louisen-Strasse
-Streekbruecke
-Harvestehuder Weg
-Sophienterrasse
-Alsterchaussee
-
-[infosystem_trip]
-61202
-MAC-UAL
-582
-612
-
-[infosystem_busstop_list]
-13
-Alsterchaussee
-Sophienterrasse
-Harvestehuder Weg
-Streekbruecke
-Maria-Louisen-Strasse
-U Sierichstrasse
-Winterhude Markt
-Lattenkampstieg
-Braamkamp
-Wilhelm-Metzger-Strasse
-Carl-Cohn-Strasse
-Hindenburgstrasse
-U Alsterdorf (Ankunft)
-
-[infosystem_trip]
-38301
-ATH-ATH
-777
-383
-
-[infosystem_busstop_list]
-12
-Bf. Altona (Pause L2)
-Bf. Altona (Abfahrt)
-Rathaus Altona 15
-Behnstrasse
-Fischauktionshalle
-Sandberg
-Grosse Elbstrasse
-Kreuzfahrtterminal Altona
-Neumuehler Kirchenweg
-Elbberg
-Rathaus Altona
-Bf. Altona (Ankunft)
-
-[infosystem_trip]
-101
-ATH-HBF
-651
-1
-
-[infosystem_busstop_list]
-5
-Bf. Altona
-S Reeperbahn
-SR U S Landungsbruecken
-Hauptbahnhof Steintordamm
-Hauptbahnhof ZOB
-
-[infosystem_trip]
-102
-ZOB-ATH
-650
-1
-
-[infosystem_busstop_list]
-5
-Hauptbahnhof ZOB (Abf. ZOB 1)
-SR Kirchenallee
-U S Landungsbruecken
-S Reeperbahn
-Bf. Altona (Ankunft)
-
