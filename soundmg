@@ -164,7 +164,7 @@ Tür 1 zu
 
 [sound]
 tueren\door_cls_m.wav
-1
+2
 
 [3d]
 1.22044
@@ -246,7 +246,7 @@ Mitte
 
 [sound]
 tueren\schwenk\door2_opn.wav
-1
+2
 
 [3d]
 0
@@ -277,7 +277,7 @@ ev_doortriggerclose_2_schwenk
 
 [sound]
 tueren\schwenk\door2_opnhit.wav
-1
+2
 
 [3d]
 0
@@ -854,8 +854,6 @@ ecas_sound_up_1
 0
 1
 
-
-
 #######################################
 Schlüssel
 
@@ -1022,17 +1020,17 @@ ev_kippschalter_aus
 #############################################
 
 [loopsound]
-sound_man\abroll.wav
+misc\abroll.wav
 44100
 velocity
 80
-0.75
+1.5
 
 [3d]
 -0.74279
 5
 0
-1
+7
 
 [volcurve]
 velocity
@@ -1043,14 +1041,14 @@ velocity
 
 [pnt]
 70
-0.75
+1
 
 ###############################
 Nasse Straße
 ###############################
 
 [sound]
-sound_man\WetLane_1.wav
+..\..\..\Sounds\WetLane_1.wav
 1
 
 
@@ -1093,7 +1091,7 @@ StreetCond
 #############################################
 
 [sound]
-sound_man\WetLane_2.wav
+..\..\..\Sounds\WetLane_2.wav
 1
 
 
@@ -1200,8 +1198,8 @@ ev_doorEntriegelung_23_on
 #############################################
 
 [sound]
-sound_man\shake3.wav
-1
+misc\shake.wav
+5
 
 [3d]
 0
@@ -1235,7 +1233,7 @@ Velocity
 
 [sound]
 misc\VDV_Blinker_ein.wav
-1
+4
 
 [3d]
 -0.63491
@@ -1246,6 +1244,20 @@ misc\VDV_Blinker_ein.wav
 
 [trigger]
 ev_lights_blinker_on
+
+[sound]
+misc\VDV_Blinker_aus.wav
+1
+
+[3d]
+-0.63491
+5.73304
+1.31745
+0.5
+
+
+[trigger]
+ev_lights_blinker_off
 
 #############################################
 
@@ -1311,7 +1323,7 @@ ev_lichthupe_swon
 
 [sound]
 misc\feststell_fest.wav
-0.75
+1
 
 [3d]
 -1.13623
@@ -1325,7 +1337,7 @@ ev_bremse_feststell_ein
 
 [sound]
 misc\feststell_loesen.wav
-0.75
+1
 
 [3d]
 -1.13623
@@ -1866,7 +1878,7 @@ Fahrertür
 ######################
 
 [sound]
-misc\fahrertuer_auf.wav
+misc\Fahrertuer_auf.wav
 1.0
 
 [3d]
@@ -2032,8 +2044,8 @@ ev_Matrix_Line_change
 ###################################################################
 
 [sound]
-sound_man\regen_in.wav
-1
+..\..\MAN_NL_NG\Sound\regen.wav
+1.0
 
 [3d]
 0
@@ -2094,7 +2106,7 @@ ABS-Regelung
 
 [sound]
 ..\..\MAN_NL_NG\Sound\ABS_Relais_on.wav
-0.5
+1
 
 [3d]
 -1.1
@@ -2108,7 +2120,7 @@ ev_bremse_ABS_0R_on
 
 [sound]
 ..\..\MAN_NL_NG\Sound\ABS_Relais_off.wav
-0.5
+1
 
 [3d]
 -1.1
@@ -2469,23 +2481,3 @@ VDV Wippschalter
 
 	[trigger]
 	ev_VDV_toggle_off
-
-
-#############################################
-
-[sound]
-misc\vdv\vdv_warn_STOP.wav
-1
-
-[noloop]
-
-[3d]
--0.65
-5.35
-1.6
-2
-
-[conditionSingle]
-haltewunsch
-1
-1
