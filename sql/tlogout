@@ -1,0 +1,68 @@
+/* LOGOUT PROCESS
+
+========================================================
+PARAMETER
+========================================================
+@dwUserID		INT
+
+========================================================
+RETURN VALUE
+========================================================
+0	: SUCCESS
+1	: NO USER
+
+========================================================
+PROCESS
+========================================================
+1. Check TCURRENTUSER table
+2. Delete user from TCURRENTUSER
+3. Update log data
+
+*/
+
+ALTER PROCEDURE [dbo].[TLogout]
+	@dwUserID	INT,
+	@dwCharID	INT
+AS
+	DECLARE @nResult	INT
+	DECLARE @bLevel	TINYINT
+	DECLARE @dwExp	INT
+	DECLARE @dwPlayTime INT
+	DECLARE @dwGold	INT
+	DECLARE @dwSilver	INT
+	DECLARE @dwCooper	INT
+	DECLARE @bWorldID	TINYINT
+	DECLARE @dCurDate SMALLDATETIME
+
+	SET @bLevel = 0
+	SET @dwExp = 0
+	SET @dwGold = 0
+	SET @dwSilver = 0
+	SET @dwCooper = 0
+	SET @dCurDate = GetDate()
+
+	IF(@dwCharID <> 0)
+	BEGIN
+		SELECT @bLevel = bLevel, @dwExp = dwEXP, @dwGold=dwGold, @dwSilver=dwSilver, @dwCooper=dwCooper FROM TCHARTABLE WHERE dwCharID = @dwCharID
+
+		EXEC TUpdateActiveChar @dwCharID
+
+		UPDATE TCHARTABLE SET dLogoutDate = @dCurDate WHERE dwCharID=@dwCharID
+
+		EXEC @nResult = TGLOBAL_GSP.dbo.TLogout @dwUserID, @dwCharID, @bLevel, @dwExp
+		IF(@nResult = 0)
+		BEGIN
+			SELECT @bWorldID = bWorld+1 FROM TDBITEMINDEXTABLE
+			EXEC TGLOBAL_GSP.dbo.TUpdateCharMoney @bWorldID, @dwCharID, @dwGold, @dwSilver, @dwCooper
+		END
+
+		
+	END
+
+EXEC TGLOBAL_GSP.DBO.TPcBangLogout @dwUserID, @dwPlayTime OUTPUT
+
+SELECT @dwUserID = dwUserID FROM TCHARTABLE WHERE dwCharID = @dwCharID
+ 
+EXEC TGLOBAL_GSP.DBO.TSaveDuringItem @dwUserID
+
+RETURN @nResult
